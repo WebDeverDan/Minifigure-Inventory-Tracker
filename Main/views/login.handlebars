@@ -1,0 +1,46 @@
+<div class='row credential_window'>
+  <div class='col-md-6 credential-form'>
+    <h2>Log In</h2>
+    <form class='form'>
+      <div class='form-group'>
+        <label for='email-login'>Email:</label>
+        <input
+          class='form-input'
+          type='text'
+          placeholder='Email'
+          id='email-login'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='password-login'>Password:</label>
+        <input
+          class='form-input'
+          type='password'
+          placeholder='Password'
+          id='password-login'
+        />
+      </div>
+      <div class='form-group'>
+        <button
+          class='btn btn-primary login-form form-input'
+          id='login_Btn'
+          type='submit'
+        >Log In</button>
+      </div>
+    </form>
+  </div>
+
+  <div class='col-md-6 credential-form'>
+    <h2>Click Below to Create Your Profile!</h2>
+    <div class='form-group'>
+      <button
+        class='btn btn-primary signup'
+        type='submit'
+        onclick="location.href='/signup'"
+      >Sign Up</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>

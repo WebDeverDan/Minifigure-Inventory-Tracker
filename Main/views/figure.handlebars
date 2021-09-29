@@ -1,0 +1,18 @@
+<h2>Your Minifigure Collection</h2>
+
+{{#each figures as |figure| }}
+<div class="container-fluid">
+<div class="row mb-4 figure-grid">
+  <div class="row">
+    <div class="col-sm">{{figure.id}}</div>
+    <div class="col-sm">{{figure.name}}</div>
+    <div class="col-sm">{{figure.theme}}</div>
+    <div class="col-sm">{{figure.quantity}}</div>
+    <div class="col-sm">{{figure.condition}}</div>
+    <div class="col-sm">{{figure.rare}}</div>
+    <div class="col-sm">{{figure.value}}</div>
+    <div class="col-sm">{{figure.favorite}}</div>
+  </div>
+</div>
+</div>
+{{/each}}

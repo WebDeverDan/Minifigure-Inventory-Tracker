@@ -1,0 +1,105 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link
+      href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css'
+      rel='stylesheet'
+      integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU'
+      crossorigin='anonymous'
+    />
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,200&display=swap'
+      rel='stylesheet'
+    />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,400;1,200&display=swap'
+      rel='stylesheet'
+    />
+    <title>The Collector</title>
+  </head>
+
+  <body>
+
+<header class='banner'>
+      <nav class='navbar navbar-light bg-light'>
+        <span class='navbar-brand mb-0 h1 page_welcome'>THE COLLECTOR</span>
+        {{#if logged_in}}
+          <button class='log_out banner_btn' id='logout'>Log Out</button>
+        {{/if}}
+      </nav>
+</header>
+<main>
+    <div class='container-fluid'>
+      {{#if logged_in}}
+        <h2 class='welcome_info_logged_in container-sm'>
+          Welcome back
+          {{currentUser.first_name}}!
+        </h2>
+        <div>
+          <button
+            class='banner_btn'
+            id='my_figuresBtn'
+            type='submit'
+            onclick="location.href='/myFigs'"
+          >My Figures</button>
+          <button
+            class='banner_btn'
+            id='add_figuresBtn'
+            type='submit'
+            onclick="location.href='/addFigs'"
+          >Add Figures</button>
+          <button
+            class='banner_btn'
+            id='bricklinkBtn'
+            type='submit'
+            onclick="location.href='https://www.bricklink.com'"
+          >Research Figures</button>
+        </div>
+        <div class='container-fluid main_window'>
+
+          {{{body}}}
+
+        </div>
+      {{else}}
+        <div class='welcome_info_logged_out'>
+          <h2 class='container-sm'>
+            Insert Welcome Message! Click Below to Start!
+          </h2>
+        </div>
+
+        <div class='container-fluid main_window'>
+
+          {{{body}}}
+
+        </div>
+      {{/if}}
+
+    </div>
+</main>
+
+    <br />
+    <br />
+    <br />
+    
+
+<footer class='footer'>Copyright: 2021 - Daniel Bradley</footer>
+   
+
+<script
+    src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js'
+    integrity='sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/'
+    crossorigin='anonymous'>
+</script>
+
+{{#if logged_in}}
+<script src='/js/logout.js'></script>
+{{/if}}
+     
+</body>
+
+</html>
