@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Figure } = require('../models');
 const withAuth = require('../utils/auth');
 
 // loads homepage upon login
@@ -29,6 +29,40 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+
+
+
+
+router.get('/', withAuth, async (req, res) => {
+  console.log(req.session.user_id);
+  
+  try {
+    // Get all suggested matches and JOIN with user data
+    // const currentUser = await User.findOne({ where: { id: req.session.user_id } });
+    // const currUser = currentUser.get({ plain: true });
+    // console.log(currUser)
+    //console.log(currentUser);
+    const figureData = await Figure.findAll({
+       });
+    // Serialize data so the template can read it
+    const figures = figureData.map((figure) => figure.get({ plain: true }));
+    // Pass serialized data and session flag into template
+    res.render('myFigures', {
+      figures,
+      // currentUser: currUser,
+      logged_in: req.session.logged_in 
+    });
+    return(currUser, userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+
+
+
 // will delete a user - currently not a delete button
 router.delete('/delete/:id', async (req, res) => {
   try {
@@ -47,7 +81,6 @@ router.delete('/delete/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 // these are for rendering the display
 router.get('/myFigures', (req, res) => {
   console.log('myFigures', req.session.logged_in);

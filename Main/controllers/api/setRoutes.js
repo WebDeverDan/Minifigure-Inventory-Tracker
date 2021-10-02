@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Set, User } = require('../../models');
+const { Sets, User } = require('../../models');
 const withAuth = require ('../../utils/auth')
 
 // create new figure
 router.post('/', withAuth, async (req, res) => {
   // try {
     console.log(req.body)
-    const newSet = await Set.create({
+    const newSet = await Sets.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -29,7 +29,7 @@ router.get('/', withAuth,async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const sets = setData.map((project) => project.get({ plain: true }));
+    const sets = setData.map((sets) => sets.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('mySets', { 

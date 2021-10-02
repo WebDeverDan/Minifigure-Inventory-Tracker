@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Set extends Model {}
+class Sets extends Model {}
 
-Set.init(
+Sets.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -31,6 +31,10 @@ Set.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    set_favorite: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     notes: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -41,8 +45,8 @@ Set.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'set',
+    modelName: 'sets',
   }
 );
 
-module.exports = Set;
+module.exports = Sets;

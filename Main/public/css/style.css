@@ -2,23 +2,94 @@ header{
     border: solid;
     font-family: 'Bungee', cursive;
 }
-body {
-    
+
+body::after {
+    content: "";
+    background: url("/images/bgd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+.side_nav {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+.main_window {
+    display: flex;
+    flex-direction: row;
 }
 
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    /* border: solid; */
+}
 .my_figuresBtn {
-    background:palegreen;
+    background:limegreen;
+    font-family: 'Bungee', cursive;
+    margin-top: .5em;
+    border: solid;
+    border-color: #212529;
+    border-left: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
-.my_setsBtn {
-    background:wheat;
-}
 .add_figuresBtn {
-    background:cornflowerblue;
+    background:darkseagreen;
+    font-family: 'Bungee', cursive;
+    margin-top: .5em;
+    border: solid;
+    border-color: #212529;
+    border-left: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
-
+.my_setsBtn {
+    background:turquoise;
+    font-family: 'Bungee', cursive;
+    margin-top: .5em;
+    border: solid;
+    border-color: #212529;
+    border-left: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.add_setsBtn {
+    background:cornflowerblue;
+    font-family: 'Bungee', cursive;
+    margin-top: .5em;
+    border: solid;
+    border-color: #212529;
+    border-left: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
 .research_figuresBtn {
-    background:lightpink;
+    background:orangered;
+    font-family: 'Bungee', cursive;
+    margin-top: .5em;
+    border: solid;
+    border-color: #212529;
+    border-left: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 .page_welcome {
@@ -31,9 +102,8 @@ body {
 padding-top: 2em;
    width: 50%;
    font-family: 'Roboto', sans-serif;
-    
-}
-.brick_photo{
+   background: #FFF;
+   border-radius: 8px;
     
 }
 
@@ -60,7 +130,8 @@ padding-top: 2em;
     /* border-radius: 10px; */
 /* } */
 .login-signup {
-    width: 40%;
+    width: 30%;
+    height: 30%;
     margin-top: 1em;
     /* border: solid; */
     font-family: 'Bungee', cursive;
@@ -127,6 +198,79 @@ padding-top: 2em;
     margin: .5em;
 }
 
+.newSetHeader {
+    display: flex;
+    justify-content: center; 
+    /* align-items: center; */ 
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+    text-align: center;
+    border: solid;
+    border-radius: 8px;
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+    font-family: 'Bungee', Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+    background-color: #FFF;
+}
+
+.yoursetsHeader {
+    display: flex;
+    justify-content: center; 
+    /* align-items: center; */ 
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+    text-align: center;
+    border: solid;
+    border-radius: 8px;
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+    font-family: 'Bungee', Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+    background-color: #FFF;
+}
+
+.yourfiguresHeader {
+    display: flex;
+    justify-content: center; 
+    /* align-items: center; */ 
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+    text-align: center;
+    border: solid;
+    border-radius: 8px;
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+    font-family: 'Bungee', Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+    background-color: #FFF;
+}
+
+.addFigHeader {
+    display: flex;
+    justify-content: center; 
+    /* align-items: center; */ 
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+    text-align: center;
+    border: solid;
+    border-radius: 8px;
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+    font-family: 'Bungee', Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+    background-color: #FFF;
+}
+
+
 .signupHeader {
     width: 100%;
     display: flex;
@@ -142,6 +286,11 @@ padding-top: 2em;
 
 .profile_info {
     font-family: 'Bungee', cursive;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    border: solid;
+    border-radius: 8px;
 
 }
 .list-group {
@@ -164,20 +313,15 @@ padding-top: 2em;
     border: solid;
     border-radius: 8px; 
 }
-.newSetHeader {
-    display: flex;
-    justify-content: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
 
-}
 .newset_container {
     font-family: 'Bungee', cursive;
     border: solid;
     border-radius: 8px;
+    background-color: white;
 }
+
+
 
 .foot-wrapper {
     position:fixed;

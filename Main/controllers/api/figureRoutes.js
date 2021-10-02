@@ -17,31 +17,9 @@ router.post('/', withAuth, async (req, res) => {
   // }
 });
 
-// get all figures that the current user has
-router.get('/', withAuth,async (req, res) => {
-  console.log(req.session.user_id);
-  try {
-    const currentUser = await User.findOne({ where: { id: req.session.user_id } });
-    const currUser = currentUser.get({ plain: true });
-    console.log(currUser)
-    const figureData = await Figure.findAll({
-      where: { figure_name: currUser.figure_name}
-    });
 
-    // Serialize data so the template can read it
-    const figures = figureData.map((project) => project.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
-    res.render('myFigures', { 
-      figures, 
-      currentUser: currUser,
-      logged_in: req.session.logged_in 
-    });
-    return(currUser, figureData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+
 
 // delete figure
 // router.delete('/figure/delete/:id', async (req, res) => {

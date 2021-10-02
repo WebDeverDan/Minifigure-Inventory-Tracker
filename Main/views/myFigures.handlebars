@@ -1,5 +1,7 @@
-<h2>Your Minifigure Collection</h2>
+<h2 class="yourfiguresHeader">Your Minifigure Collection</h2>
 
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 newset_container'>
+{{#if figures.length}}
 {{#each figures as |figure| }}
 <div class="container-fluid">
 <div class="row mb-4 figure-grid">
@@ -11,7 +13,12 @@
     <div class="col-sm">{{figure.rare}}</div>
     <div class="col-sm">{{figure.value}}</div>
     <div class="col-sm">{{figure.favorite}}</div>
+    <div class="col-sm">{{figure.notes}}</div>
   </div>
 </div>
 </div>
 {{/each}}
+{{/if}}
+</div>
+
+

@@ -45,6 +45,11 @@ const newFigureHandler = async (event) => {
   //   }
   // };
   
+
+
+
+
+  
   document
     .querySelector('.add_figBtn')
     .addEventListener('click', newFigureHandler);

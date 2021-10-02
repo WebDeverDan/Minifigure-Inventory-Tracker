@@ -1,12 +1,12 @@
 [
     {
-      "name": "White Boba Fett",
+      "name": "Slave 1",
       "theme": "Star Wars",
       "quantity": "1",
       "condition": "good",
-      "rare": "rare",
       "value": 150,
-      "favorite": "yes",
+      "set_favorite": "no",
       "notes": "In great shape!"
     }
   ]
+  
