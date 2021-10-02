@@ -1,0 +1,17 @@
+<h2>Your Set Collection</h2>
+
+{{#each sets as |set| }}
+<div class="container-fluid">
+<div class="row mb-4 figure-grid">
+  <div class="row">
+    <div class="col-sm">{{set.name}}</div>
+    <div class="col-sm">{{set.theme}}</div>
+    <div class="col-sm">{{set.quantity}}</div>
+    <div class="col-sm">{{set.condition}}</div>
+    <div class="col-sm">{{set.value}}</div>
+    <div class="col-sm">{{set.favorite}}</div>
+    <div class="col-sm">{{set.notes}}</div>
+  </div>
+</div>
+</div>
+{{/each}}

@@ -1,0 +1,53 @@
+
+  <div class="col-md-6">
+    <h2>Add a New Set to Your Collection!</h2>
+
+    <form class="form new-set-form">
+      <div class="form-group">
+        <label for="set-name">Name:</label>
+        <input class="form-input" type="text" id="set-name" name="set-name" />
+      </div>
+      <div class="form-group">
+        <label for="set-theme">Theme:</label>
+        <input class="form-input" type="text" id="set-theme" name="set-theme"/>
+      </div>
+      <div class="form-group">
+        <label for="set-value">Value:($)</label>
+        <input class="form-input" type="number" id="set-value" name="set-value"/>
+      </div>
+      <div class="form-group">
+        <label for="set-quantity">Quantity:</label>
+        <input class="form-input" type="number" id="set-quantity" name="set-quantity">
+      </div>
+      <div class="form-group">
+        <label for="condition">Condition:</label>
+        <select id="condition" name="condition">
+          <option class="condition" value="sealed">Sealed</option>
+          <option class="condition" value="new">New</option>
+          <option class="condition" value="like-new">Like-New</option>
+          <option class="condition" value="great">Great</option>
+          <option class="condition" value="good">Good</option>
+          <option class="condition" value="fair">Fair</option>
+          <option class="condition" value="poor">Poor</option>
+          <option class="condition" value="incomplete">Incomplete</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="set-favorite">Is it Your Favorite?</label>
+        <select id="set-favorite" name="favorite">
+          <option class="set-favorite" value="yes">Yes</option>
+          <option class="set-favorite" value="no">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="set-notes">Notes:</label>
+        <textarea class="form-input" id="set-notes" name="set-notes"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="click" class="btn btn-primar add_setBtn">Add Set</button>
+      </div>
+    </form>
+  </div>
+
+  
+<script src="/js/set.js"></script>

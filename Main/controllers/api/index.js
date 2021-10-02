@@ -1,11 +1,15 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
+const figureRoutes = require('./figureRoutes');
+const setRoutes = require('./setRoutes');
 
-// const dashboardRoutes = require('./dashboardRoutes');
+
 
 
 router.use('/user', userRoutes);
-// router.use('/dashboard', dashboardRoutes);
+router.use('/figure', figureRoutes);
+router.use('/set', setRoutes);
+
 
 
 

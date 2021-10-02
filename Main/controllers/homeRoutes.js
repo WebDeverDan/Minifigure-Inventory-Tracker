@@ -2,61 +2,77 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+// loads homepage upon login
 router.get('/', withAuth, async (req, res) => {
   console.log(req.session.user_id);
-  
+
   try {
-    // Serialize data so the template can read it
-    const users = userData.map((user) => user.get({ plain: true }));
-    const currentUser = await User.findOne({ where: { id: req.session.user_id } });
-    const currUser = currentUser.get({ plain: true });
-    // Pass serialized data and session flag into template
-    res.render('dashboard', {
-      users,
-      currentUser: currUser,
-      logged_in: req.session.logged_in 
+    // Get all suggested matches and JOIN with user data
+    const currentUser = await User.findOne({
+      where: { id: req.session.user_id },
     });
-    // console.log(req.session.user_id);
-    return(currUser, userData);
+    const currUser = currentUser.get({ plain: true });
+    console.log(currUser);
+    //console.log(currentUser);
+
+    // Serialize data so the template can read it
+    // const users = userData.map((user) => user.get({ plain: true }));
+    // Pass serialized data and session flag into template
+    res.render('homepage', {
+      // users,
+      currentUser: currUser,
+      logged_in: req.session.logged_in,
+    });
+    return currUser;
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// router.delete('/delete/:id', async (req, res) => {
-//   try{
-//     const userData = await User.destroy({
-//       where: { id: req.params.id,
-//                   }});
+// will delete a user - currently not a delete button
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    const userData = await User.destroy({
+      where: { id: req.params.id },
+    });
 
-//     if (!userData) {
-//       res.status(404).json({ message: 'No user found with this id!' });
-//       return;
-//     }
+    if (!userData) {
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
+    }
 
-//     res.status(200).json(userData);
-//   } catch (err) {
-//     console.log("helloworld")
-//     console.log(err)
-//     res.status(500).json(err);
-//   }
-// });
+    res.status(200).json(userData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// these are for rendering the display
+router.get('/myFigures', (req, res) => {
+  console.log('myFigures', req.session.logged_in);
+  res.render('myFigures', { logged_in: req.session.logged_in });
+});
+router.get('/addFigure', (req, res) => {
+  console.log('addFigure');
+  res.render('addFigure', { logged_in: req.session.logged_in });
+});
+router.get('/mySets', (req, res) => {
+  console.log('mySets');
+  res.render('mySets', { logged_in: req.session.logged_in });
+});
+router.get('/addSet', (req, res) => {
+  console.log('addSet');
+  res.render('addSet', { logged_in: req.session.logged_in });
+});
 
 router.get('/login', (req, res) => {
-console.log("login")
+  console.log('login');
   res.render('login');
 });
-
 router.get('/signup', (req, res) => {
-    console.log("signup")
-    res.render('signup');
+  console.log('signup');
+  res.render('signup');
 });
-
-// router.get('/dashboard', (req, res) => {
-//     console.log("dashboard")
-//       res.render('dashboard');
-// });
-
 
 module.exports = router;

@@ -28,7 +28,7 @@ Figure.init(
       allowNull: false,
     },
     rare: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     value: {
@@ -36,13 +36,12 @@ Figure.init(
       allowNull: false,
     },
     favorite: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
     },
     notes: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-
   },
   {
     sequelize,

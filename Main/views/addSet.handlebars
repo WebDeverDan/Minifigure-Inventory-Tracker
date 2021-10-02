@@ -1,0 +1,110 @@
+<h2 class="newSetHeader">Add a New Set to Your Collection!</h2>
+
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 newset_container'>
+  <form class='needs-validation' novalidate>
+    <div class='form-row'>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-name'>Set name</label>
+        <input
+          type='text'
+          class='form-control'
+          id='set-name'
+          placeholder='Set name'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-theme'>SetTheme</label>
+        <input
+          type='text'
+          class='form-control'
+          id='set-theme'
+          placeholder='Set Theme'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+        <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+          <label for='set-value'>Value($)</label>
+          <input
+            type='number'
+            class='set-value'
+            id='set-value'
+            placeholder='$$'
+            required
+          />
+          <div class='invalid-feedback'>
+            Please provide a valid value.
+          </div>
+        </div>
+       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-quantity'>Quantity</label>
+        <div class='input-group'>
+          <div class='set-quantity'>
+          </div>
+          <input
+            type='number'
+            class='form-control'
+            id='set-quantity'
+            placeholder='Quantity'
+            required
+          />
+          <div class='invalid-feedback'>
+            Please enter a valid quantity.
+          </div>
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='condition'>Condition</label>
+        <select id="condition" name="condition">
+           <option class="condition" value="null"></option>
+          <option class="condition" value="sealed">Sealed</option>
+          <option class="condition" value="new">New</option>
+          <option class="condition" value="like-new">Like-New</option>
+          <option class="condition" value="great">Great</option>
+          <option class="condition" value="good">Good</option>
+          <option class="condition" value="fair">Fair</option>
+          <option class="condition" value="poor">Poor</option>
+          <option class="condition" value="incomplete">Incomplete</option>
+        </select>
+        <div class='invalid-feedback'>
+          Please select a condition.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-favorite'>Is it your favorite set?</label>
+        <select id="set-favorite" name="favorite">
+           <option class="set-favorite" value="null"></option>
+          <option class="set-favorite" value="yes">Yes</option>
+          <option class="set-favorite" value="no">No</option>
+        </select>
+        <div class='invalid-feedback'>
+          Please choose an answer.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-notes'>Notes</label>
+        <input
+          type='text'
+          class='form-control'
+          id='set-notes'
+          placeholder='Notes'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class='create_Btn'>
+    <button type='click' class='btn btn-primary add_setBtn'>Add Set</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/set.js"></script>

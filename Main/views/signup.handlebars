@@ -1,50 +1,107 @@
-<div class='col-sm-12 col-md-6 col-lg-3 signup_container'>
-  
 
-  
-  <div class="signup-form">
-    <h2 class="signupHeader">Create Your Collector Profile!</h2>
-    <div class='form-group'>
-      <label for='first_name-signup'>First Name:</label>
-      <input class='form-input' type='text' id='first_name-signup' />
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 signup_container'>
+  <form class='needs-validation' novalidate>
+    <div class='form-row'>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='first_name-signup'>First name</label>
+        <input
+          type='text'
+          class='form-control'
+          id='first_name-signup'
+          placeholder='First name'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='last_name-signup'>Last name</label>
+        <input
+          type='text'
+          class='form-control'
+          id='last_name-signup'
+          placeholder='Last name'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+        <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+          <label for='email-signup'>Email</label>
+          <input
+            type='text'
+            class='form-control'
+            id='email-signup'
+            placeholder='Email'
+            required
+          />
+          <div class='invalid-feedback'>
+            Please provide a valid email address.
+          </div>
+        </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='password-signup'>Password</label>
+        <div class='input-group'>
+          <div class='input-group-prepend'>
+          </div>
+          <input
+            type='password'
+            class='form-control'
+            id='password-signup'
+            placeholder='Password'
+            required
+          />
+          <div class='invalid-feedback'>
+            Please choose a password.
+          </div>
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='age'>Age</label>
+        <input
+          type='integer'
+          class='form-control'
+          id='age-signup'
+          placeholder='Age'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please provide an age.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='years-signup'>How many years have you been collecting for?</label>
+        <input
+          type='integer'
+          class='form-control'
+          id='years-signup'
+          placeholder='Years Collecting'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please provide a valid zip.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='favorite-signup'>What is your favorite figure?</label>
+        <input
+          type='text'
+          class='form-control'
+          id='favorite-signup'
+          placeholder='Figure Name'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please provide a figure name.
+        </div>
+      </div>
     </div>
-
-    <div class='form-group'>
-      <label for='last_name-signup'>Last Name:</label>
-      <input class='form-input' type='text' id='last_name-signup' />
+    <div class="create_Btn">
+    <button class='btn btn-primary create-profileBtn' type='submit'>Create Profile</button>
     </div>
-
-    <div class='form-group'>
-      <label for='email-signup'>Email:</label>
-      <input class='form-input' type='text' id='email-signup' />
-    </div>
-
-    <div class='form-group'>
-      <label for='password-signup'>Password:</label>
-      <input class='form-input' type='password' id='password-signup' />
-    </div>
-
-    <div class='form-group'>
-      <label for='age'>How old are you?</label>
-      <input class='form-input' type='integer' id='age-signup' />
-    </div>
-
-    <div class='form-group'>
-      <label for='years-signup'>How many years have you been collecting Lego?</label>
-      <input class='form-input' type='integer' id='years-signup' />
-    </div>
-
-    <div class='form-group'>
-      <label for='favorite-signup'>What is your favorite figure?</label>
-      <input class='form-input' type='text' id='favorite-signup'/>
-    </div>
-
-    <div class='form-group'>
-      <button class='banner_btn create-profileBtn' type='submit'>Create Profile</button>
-    </div>
-  </div>
+  </form>
 </div>
- 
+
 <script src="/js/signup.js"></script>
-
-

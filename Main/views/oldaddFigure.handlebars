@@ -1,0 +1,60 @@
+
+  <div class="col-md-6">
+    <h2>Add a New Figure to Your Collection!</h2>
+
+    <form class="form new-figure-form">
+      <div class="form-group">
+        <label for="figure-name">Name:</label>
+        <input class="form-input" type="text" id="figure-name" name="figure-name" />
+      </div>
+      <div class="form-group">
+        <label for="figure-theme">Theme:</label>
+        <input class="form-input" type="text" id="figure-theme" name="figure-theme"/>
+      </div>
+      <div class="form-group">
+        <label for="figure-value">Value:($)</label>
+        <input class="form-input" type="number" id="figure-value" name="figure-value"/>
+      </div>
+      <div class="form-group">
+        <label for="figure-quantity">Quantity:</label>
+        <input class="form-input" type="number" id="figure-quantity" name="figure-quantity">
+      </div>
+      <div class="form-group">
+        <label for="condition">Condition:</label>
+        <select id="condition" name="condition">
+          <option class="condition" value="sealed">Sealed</option>
+          <option class="condition" value="new">New</option>
+          <option class="condition" value="like-new">Like-New</option>
+          <option class="condition" value="great">Great</option>
+          <option class="condition" value="good">Good</option>
+          <option class="condition" value="fair">Fair</option>
+          <option class="condition" value="poor">Poor</option>
+          <option class="condition" value="incomplete">Incomplete</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="figure-rarity">Rare?</label>
+        <select id="rarity" name="rarity">
+          <option class="rarity" value="rare">Rare</option>
+          <option class="rarity" value="notRare">Not Rare</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="figure-favorite">Is it Your Favorite?</label>
+        <select id="favorite" name="favorite">
+          <option class="favorite" value="yes">Yes</option>
+          <option class="favorite" value="no">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="figure-notes">Notes:</label>
+        <textarea class="form-input" id="figure-notes" name="figure-notes"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="click" class="btn btn-primar add_figBtn">Add Figure</button>
+      </div>
+    </form>
+  </div>
+
+  
+<script src="/js/figure.js"></script>

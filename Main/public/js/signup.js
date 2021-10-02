@@ -1,3 +1,6 @@
+// DON"T TOUCH SIGN UP! IT IS WORKING AS IT SHOULD
+
+
 const signupFormHandler = async (event) => {
   event.preventDefault();
   console.log("Daniel")
@@ -33,7 +36,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/login');
     } else {
       alert(response.statusText);
     }
@@ -42,6 +45,7 @@ const signupFormHandler = async (event) => {
 
 document
   .querySelector('.create-profileBtn')
-  .addEventListener('submit', signupFormHandler);
+  .addEventListener('click', signupFormHandler);
 
 
+  

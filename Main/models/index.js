@@ -1,21 +1,24 @@
 const User = require('./user');
 const Figure = require('./figure');
-// const Collection = require('./collection');
+const Set = require('./set')
 
-Figure.belongsTo(User, {
-  foreignKey: 'figure_id'
-});
-
-// Collection.belongsTo(User, {
-//   foreignKey: 'collection_id',
-// })
 
 User.hasMany(Figure, {
   foreignKey: 'user_id',
 });
 
+User.hasMany(Set, {
+  foreignKey: 'user_id',
+});
+
+// Figure.belongsToMany(User, {
+//   foreignKey: 'figure_id'
+// })
+
+// Set.belongsToMany(User, {
+//   foreignKey: 'set_id'
+// })
 
 
 
-
-module.exports = { User, Figure};
+module.exports = { User, Figure, Set };

@@ -1,46 +1,31 @@
-<div class='row credential_window'>
-  <div class='col-md-6 credential-form'>
-    <h2>Log In</h2>
-    <form class='form'>
-      <div class='form-group'>
-        <label for='email-login'>Email:</label>
-        <input
-          class='form-input'
-          type='text'
-          placeholder='Email'
-          id='email-login'
-        />
+  <div class="container">
+    
+    <div class="row d-flex justify-content-center h-10">
+      <div class="login_paragraph">
+          <p>Welcome! Here you'll be able to document your figures, sets, and research figures or sets you'd like to buy in the future! Your personalized dashboard shows user information, along with the value of your collection, broken down by figures and sets. Not into Lego? No problem. In the future we'll be adding more customization to record other collections you may have. But for now, enjoy collecting! </p>
+        <img class="w-100" src="/images/bricks.jpeg"/>
+    </div>
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5 login-signup">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-3 text-center ">
+            <h4 class="mb-3">Sign In</h3>
+            <div class="form-outline mb-4">
+              <input type="email" id="email-login" class="form-control form-control-lg" placeholder='Email'/>
+              <label class="form-label" for="email-login">Email</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input type="password" id="password-login" class="form-control form-control-lg form-input" placeholder='Password' />
+              <label class="form-label" for="password-login">Password</label>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block login_Btn mb-3" id="password-login" type="click" id='login_Btn'>Sign In</button>
+            <h4 class="mb-2">Not a member yet?</h2>
+            <button class="btn btn-primary btn-lg signup btn-block" id="password-login" type='submit' onclick="location.href='/signup'">Signup</button>
+          </div>
+          
+        </div>
       </div>
-      <div class='form-group'>
-        <label for='password-login'>Password:</label>
-        <input
-          class='form-input'
-          type='password'
-          placeholder='Password'
-          id='password-login'
-        />
-      </div>
-      <div class='form-group'>
-        <button
-          class='btn btn-primary login-form form-input'
-          id='login_Btn'
-          type='submit'
-        >Log In</button>
-      </div>
-    </form>
-  </div>
-
-  <div class='col-md-6 credential-form'>
-    <h2>Click Below to Create Your Profile!</h2>
-    <div class='form-group'>
-      <button
-        class='btn btn-primary signup'
-        type='submit'
-        onclick="location.href='/signup'"
-      >Sign Up</button>
+      
     </div>
   </div>
-</div>
 
 <script src="/js/login.js"></script>
-<script src="/js/signup.js"></script>
