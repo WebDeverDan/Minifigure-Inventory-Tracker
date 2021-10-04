@@ -36,9 +36,9 @@
       <nav class='navbar navbar-dark bg-dark p-2'>
         <span
           class='navbar-brand mb-0 h1 page_welcome'
-          onclick="location.href='/login'">THE COLLECTOR</span>
+          onclick="location.href='/'">THE COLLECTOR</span>
         {{#if logged_in}}
-        <button class='log_out banner_btn' id='logout'>Log Out</button>
+        <button class='btn log_out' id='logout' type='click'>Log Out</button>
         {{/if}}
       </nav>
     </header>
@@ -48,6 +48,7 @@
       {{#if logged_in}}
       <div class="main_window">
         <div class="side_nav">
+          <button class='banner_btn dashboardBtn' id='dashboardBtn' type='click' onclick="location.href='/'">Dashboard</button>
           <button class='banner_btn my_figuresBtn'
             id='my_figuresBtn'
             type='submit'
@@ -86,11 +87,7 @@
             {{currentUser.first_name}}!
           </h2> --}}
         {{else}}
-          <div class='welcome_info_logged_out'>
-            <h2 class='container-sm'>
-              Ready to start collecting? You've come to the right place!
-            </h2>
-          </div>
+            
         {{/if}}
         <div class='container-fluid main-content'>
 
@@ -117,6 +114,7 @@
       integrity='sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/'
       crossorigin='anonymous'
     >
+    
     </script>
 
     {{#if logged_in}}

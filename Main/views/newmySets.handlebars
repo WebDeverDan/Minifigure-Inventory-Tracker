@@ -1,0 +1,34 @@
+<h2 class="yourfiguresHeader">Your Minifigure Collection</h2>
+
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 figures_container'>
+
+<div class="table-container" role="table" aria-label="Destinations">
+  <div class="flex-table header" role="rowgroup">
+  <div class="flex-row first" role="columnheader">Name</div>
+  <div class="flex-row" role="columnheader">Theme</div>
+  <div class="flex-row" role="columnheader">Quantity</div>
+  <div class="flex-row" role="columnheader">Condition</div>
+  <div class="flex-row" role="columnheader">Rare?</div>
+  <div class="flex-row" role="columnheader">Value</div>
+  <div class="flex-row" role="columnheader">Favorite Fig?</div>
+  <div class="flex-row" role="columnheader">Notes</div>
+{{#if figures.length}}
+{{#each figures as |figure|}}
+</div>
+<div class="flex-table row" role="rowgroup">
+  <div class="flex-row first" role="cell">{{figure.name}}</div>
+  <div class="flex-row" role="cell">{{figure.theme}}</div>
+  <div class="flex-row" role="cell">{{figure.quantity}}</div>
+  <div class="flex-row" role="cell">{{figure.condition}}</div>
+  <div class="flex-row" role="cell">${{figure.rare}}</div>
+  <div class="flex-row" role="cell">{{figure.value}}</div>
+  <div class="flex-row" role="cell">{{figure.favorite}}</div>
+  <div class="flex-row" role="cell">{{figure.notes}}</div>
+</div>
+{{/each}}
+{{/if}}
+
+
+
+
+</div>

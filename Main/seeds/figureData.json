@@ -7,6 +7,7 @@
       "rare": "rare",
       "value": 150,
       "favorite": "yes",
-      "notes": "In great shape!"
+      "notes": "In great shape!",
+      "user_id": 1
     }
   ]

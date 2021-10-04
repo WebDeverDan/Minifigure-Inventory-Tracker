@@ -3,6 +3,22 @@ header{
     font-family: 'Bungee', cursive;
 }
 
+.page_welcome:hover{
+    cursor: pointer;
+}
+.log_out{
+    border:solid;
+    background-color:#FFF;
+}
+.log_out:hover {
+    background-color:pink;
+  }
+
+p{
+    font-size: 15px;
+}
+
+
 body::after {
     content: "";
     background: url("/images/bgd.jpg");
@@ -26,6 +42,23 @@ body::after {
     display: flex;
     flex-direction: row;
 }
+.login_welcome{
+    display: flex;
+    justify-content: center; 
+    /* align-items: center; */ 
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+    text-align: center;
+    border: solid;
+    border-radius: 8px;
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+    font-family: 'Bungee', Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+    background-color: #FFF;
+}
 
 
 .main-content{
@@ -35,16 +68,45 @@ body::after {
     width: 80%;
     /* border: solid; */
 }
+.dashboardBtn{
+    background:yellow;
+    font-family: 'Bungee', cursive;
+    margin-top: .5em;
+    border: solid;
+    border-color: black;
+    border-left: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transition: 0.3s; 
+}
+.dashboardBtn:hover {
+    background-color: #FFF;
+  }
 .my_figuresBtn {
     background:limegreen;
     font-family: 'Bungee', cursive;
     margin-top: .5em;
     border: solid;
-    border-color: #212529;
+    border-color: black;
     border-left: none;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    transition: 0.3s;
+}
+.my_figuresBtn:hover {
+    background-color: #FFF;
+}
+
+.add_setBtn{
+    background:cornflowerblue;
+    border: solid;
+}
+
+.add_figBtn{
+    background:darkseagreen;
+    border: solid;  
 }
 
 .add_figuresBtn {
@@ -52,76 +114,145 @@ body::after {
     font-family: 'Bungee', cursive;
     margin-top: .5em;
     border: solid;
-    border-color: #212529;
+    border-color: black;
     border-left: none;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    transition: 0.3s;
 }
+.add_figuresBtn:hover {
+    background-color: #FFF;
+  }
+
 .my_setsBtn {
     background:turquoise;
     font-family: 'Bungee', cursive;
     margin-top: .5em;
     border: solid;
-    border-color: #212529;
+    border-color: black;
     border-left: none;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    transition: 0.3s;
 }
+
+.my_setsBtn:hover {
+    background-color: #FFF;
+  }
+
 .add_setsBtn {
     background:cornflowerblue;
     font-family: 'Bungee', cursive;
     margin-top: .5em;
     border: solid;
-    border-color: #212529;
+    border-color: black;
     border-left: none;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    transition: 0.3s;
 }
+.add_setsBtn:hover {
+    background-color: #FFF;
+}
+
 .research_figuresBtn {
     background:orangered;
     font-family: 'Bungee', cursive;
     margin-top: .5em;
     border: solid;
-    border-color: #212529;
+    border-color: black;
     border-left: none;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    transition: 0.3s;
 }
+
+.research_figuresBtn:hover {
+    background-color: #FFF;
+  }
 
 .page_welcome {
     /* border: solid; */
     font-size: x-large;
-    
 }
 
 .login_paragraph{
-padding-top: 2em;
+   margin-top: 2em;
+   padding-top: 1em;
    width: 50%;
-   font-family: 'Roboto', sans-serif;
+   height:45%;
+   font-family: 'Bungee', cursive;
+   /* font-weight: bold; */
    background: #FFF;
-   border-radius: 8px;
-    
+   border-radius: 15px;
+   border: solid;   
 }
 
+.brick_photo{
+    margin: auto;
+    
+}
+.brick_photo_box{
+    display: flex;
+    align-content: center;
+}
+
+.login_Btn {
+    background-color: forestgreen;
+}
+
+.signup_container {
+
+}
 
 .welcome_info_logged_in {
     margin-top: 1em;
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
+    border-radius: 8px;
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
 }
-.welcome_info_logged_out{
+
+.welcome_logged_in {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center; 
+    /* align-items: center; */ 
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
     text-align: center;
-    /* border: solid; */
-    margin: 1em;
+    border: solid;
+    border-radius: 8px;
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+    font-family: 'Bungee', Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+    background-color: #FFF;
+}
+
+.welcome_info_logged_out{
+    /* /* display: flex;
+    justify-content: flex-end;  */
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+    /* text-align: center;
+    border: solid;
+    border-radius: 8px;
+    padding-top: .5em;
+    padding-right: 0em;
+    padding-left: 0em;
+    margin-top: 1em;
     font-family: 'Roboto', sans-serif;
+    font-weight: bold;  
+    background-color: #FFF;  */
 
 }
 
@@ -129,35 +260,35 @@ padding-top: 2em;
     /* border: solid; */
     /* border-radius: 10px; */
 /* } */
+
 .login-signup {
     width: 30%;
-    height: 30%;
+    height: 100%;
     margin-top: 1em;
-    /* border: solid; */
     font-family: 'Bungee', cursive;
-
+    padding-top: 1em;
 }
+
+.login-card {
+    border: solid;
+}
+
 .signup_container {
-    display: flex;
-    flex-direction: row;
-    width: 75%;
-    /* justify-content: center; */
-    /* align-self: center; */
-    /* align-content: center; */
-    padding: 1em;
-    margin-bottom: 1em;
-    margin: auto;
+    font-family: 'Bungee', cursive;
     border: solid;
     border-radius: 8px;
-    
-
+    background-color: white;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; */
 }
+
 .form-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
 }
+
 .input-box {
     margin: 1em;
 }
@@ -251,6 +382,67 @@ padding-top: 2em;
     font-weight: bold;  
     background-color: #FFF;
 }
+.figures_container {
+    font-family: 'Bungee', cursive;
+    border: solid;
+    border-radius: 8px;
+    background-color: white;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; */
+}
+
+.figure_Btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 1em;
+    flex-grow: inherit;
+}
+.grid_header{
+    padding-right: 1em;
+    padding-left: 1em;
+    /* border: solid; */
+    /* border-bottom: solid; */
+    margin:0;
+    text-align: center;
+}
+.edit_figuresBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    width: 10%;
+    
+}
+/* grid */
+
+.itemconfiguration{
+    
+    /* background-color:#CCC; */		
+    overflow-y:auto;
+    height: 500px;
+    
+    
+    
+    
+}
+.grid_content{
+    padding-top: .5em;
+    padding-bottom: 0;
+    border-top: solid;
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+    /* align-content: center; */
+    text-align: center;
+    word-wrap: none;
+    
+}
+
+
+
+
+
 
 .addFigHeader {
     display: flex;
@@ -272,10 +464,10 @@ padding-top: 2em;
 
 
 .signupHeader {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    font-family: 'Bungee', cursive;
     border: solid;
+    border-radius: 8px;
+    background-color: white;
 }
 
 .dashboard_message {
@@ -293,6 +485,9 @@ padding-top: 2em;
     border-radius: 8px;
 
 }
+
+
+
 .list-group {
     border-radius: 8px;
 }
@@ -313,6 +508,11 @@ padding-top: 2em;
     border: solid;
     border-radius: 8px; 
 }
+.recommendation_text{
+   padding-left: 1em;
+   padding-right: 1em;
+   padding-top: 1em;
+}
 
 .newset_container {
     font-family: 'Bungee', cursive;
@@ -320,6 +520,48 @@ padding-top: 2em;
     border-radius: 8px;
     background-color: white;
 }
+
+
+
+.resources_box{
+    padding: 1em;
+    font-size: 25px;
+}
+
+.resource_hover1 {
+    color:red; 
+    text-decoration: none;
+    
+}
+
+.resource_hover2 {
+    color: purple;
+    text-decoration: none;
+    
+}
+
+.resource_hover3 {
+    color: green;
+    text-decoration: none;
+    
+}
+
+.resource_hover1:hover {
+    color:mediumblue;
+    cursor: pointer;
+}
+
+.resource_hover2:hover {
+    color:mediumblue;
+    cursor: pointer;
+}
+
+.resource_hover3:hover {
+    color:mediumblue;
+    cursor: pointer;
+}
+
+
 
 
 

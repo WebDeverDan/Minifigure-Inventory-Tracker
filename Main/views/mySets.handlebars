@@ -1,17 +1,42 @@
-<h2 class="yoursetsHeader">Your Set Collection</h2>
+<h2 class="yourfiguresHeader">Your Set Collection</h2>
 
-{{#each sets as |set| }}
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 figures_container'>
+  
+<div class="row grid_header">
+    <div class="col-sm">Name</div>
+    <div class="col-sm">Theme</div>
+    <div class="col-sm">Quantity</div>
+    <div class="col-sm">Condition</div>
+    <div class="col-sm">Value</div>
+    <div class="col-sm">Favorite Fig?</div>
+    <div class="col-sm">Notes</div>
+  </div>
+<div class="itemconfiguration">
+{{#if sets.length}}
+{{#each sets as |set|}}
 <div class="container-fluid">
 <div class="row mb-4 figure-grid">
-  <div class="row">
+  <div class="row grid_content">
     <div class="col-sm">{{set.name}}</div>
     <div class="col-sm">{{set.theme}}</div>
     <div class="col-sm">{{set.quantity}}</div>
     <div class="col-sm">{{set.condition}}</div>
-    <div class="col-sm">{{set.value}}</div>
+    <div class="col-sm">${{set.value}}</div>
     <div class="col-sm">{{set.favorite}}</div>
     <div class="col-sm">{{set.notes}}</div>
+  </div>
+  <div class="figure_Btns">
+    <button
+            class='banner_btn edit_figuresBtn'
+            id='edit_figuresBtn'
+            type='submit'
+            data-id="{{set.id}}"
+            {{!-- onclick="location.href='/editFigure'" --}}
+          >Edit</button>
   </div>
 </div>
 </div>
 {{/each}}
+{{/if}}
+</div>
+</div>

@@ -1,24 +1,45 @@
 <h2 class="yourfiguresHeader">Your Minifigure Collection</h2>
 
-<div class='col-sm4 col-md-6 col-lg-12 mb-3 newset_container'>
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 figures_container'>
+  
+<div class="row grid_header">
+    <div class="col-sm">Name</div>
+    <div class="col-sm">Theme</div>
+    <div class="col-sm">Quantity</div>
+    <div class="col-sm">Condition</div>
+    <div class="col-sm">Rare?</div>
+    <div class="col-sm">Value</div>
+    <div class="col-sm">Favorite Fig?</div>
+    <div class="col-sm">Notes</div>
+  </div>
+<div class="itemconfiguration">
 {{#if figures.length}}
-{{#each figures as |figure| }}
+{{#each figures as |figure|}}
 <div class="container-fluid">
 <div class="row mb-4 figure-grid">
-  <div class="row">
+  <div class="row grid_content">
     <div class="col-sm">{{figure.name}}</div>
     <div class="col-sm">{{figure.theme}}</div>
     <div class="col-sm">{{figure.quantity}}</div>
     <div class="col-sm">{{figure.condition}}</div>
     <div class="col-sm">{{figure.rare}}</div>
-    <div class="col-sm">{{figure.value}}</div>
+    <div class="col-sm">${{figure.value}}</div>
     <div class="col-sm">{{figure.favorite}}</div>
     <div class="col-sm">{{figure.notes}}</div>
+  </div>
+  <div class="figure_Btns">
+    <button
+            class='banner_btn edit_figuresBtn'
+            id='edit_figuresBtn'
+            type='submit'
+            data-id="{{figure.id}}"
+            onclick="location.href='/editFigure'"
+          >Edit</button>
   </div>
 </div>
 </div>
 {{/each}}
 {{/if}}
 </div>
-
+</div>
 

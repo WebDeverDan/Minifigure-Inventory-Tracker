@@ -1,18 +1,20 @@
 
 
-<h2 class="dashboard_message">{{currentUser.first_name}}'s Collector Dashboard</h2>
+<h2 class="login_welcome">{{currentUser.first_name}}'s Collector Dashboard</h2>
 <div class="card profile_info" style="width: 50%;">
+  {{!-- <img/> --}}
   <ul class="list-group profile_list profile_text_list list-group-flush">
-    <li class="list-group-item profile_text">Name: {{currentUser.first_name}}</li>
-    <li class="list-group-item profile_text">Email: {{currentUser.email}}</li>
-    <li class="list-group-item profile_text">Age: {{currentUser.age}}</li>
-    <li class="list-group-item profile_text">Years Collecting: {{currentUser.years_collecting}}</li>
-    <li class="list-group-item profile_text">Favorite Figure: {{currentUser.favorite_fig}}</li>
-    <li class="list-group-item profile_text">You Have XX figures in your collection</li>
-    <li class="list-group-item profile_text">You Have XX sets in your collection</li>
-    <li class="list-group-item profile_text">Your collection is worth $$</li>
+    <li class="list-group-item profile_text fs-5">Name: {{currentUser.first_name}}</li>
+    <li class="list-group-item profile_text fs-5">Email: {{currentUser.email}}</li>
+    <li class="list-group-item profile_text fs-5">Age: {{currentUser.age}}</li>
+    <li class="list-group-item profile_text fs-5">Years Collecting: {{currentUser.years_collecting}}</li>
+    <li class="list-group-item profile_text fs-5">Favorite Figure: {{currentUser.favorite_fig}}</li>
+    <li class="list-group-item profile_text fs-5">You Have XX figures in your collection</li>
+    <li class="list-group-item profile_text fs-5">You Have XX sets in your collection</li>
+    <li class="list-group-item profile_text fs-5">Your collection is worth $$</li>
   </ul>
 </div>
+{{!-- <img> --}}
 <div class="update_profile_Btn"></div>
 
 

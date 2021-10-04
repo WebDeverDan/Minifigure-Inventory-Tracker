@@ -1,7 +1,6 @@
 const newFigureHandler = async (event) => {
     event.preventDefault();
    
-    alert("something")
     const name = document.querySelector('#figure-name').value.trim();
     const theme= document.querySelector('#figure-theme').value.trim();
     const value = document.querySelector('#figure-value').value.trim();
@@ -22,29 +21,34 @@ const newFigureHandler = async (event) => {
   
       if (response.ok) {
         alert('Figure Created!');
-        document.location.replace('/');
+        document.location.replace('/myFigures');
       } else {
         alert('Failed to create figure');
       }
     }
   };
   
-  // const delButtonHandler = async (event) => {
-  //   if (event.target.hasAttribute('data-id')) {
-  //     const id = event.target.getAttribute('data-id');
   
-  //     const response = await fetch(`/api/projects/${id}`, {
-  //       method: 'DELETE',
-  //     });
-  
-  //     if (response.ok) {
-  //       document.location.replace('/figure');
-  //     } else {
-  //       alert('Failed to delete figure');
-  //     }
-  //   }
-  // };
-  
+// const deleteB = document.querySelector("#delete_button");
+// console.log(deleteB)
+
+// const deletebutton = async (event) => {
+//   const userID =  event.target.getAttribute("data-id")
+//   console.log(userID);
+//   const response = await fetch(`/delete/${userID}`, {
+//     method: 'DELETE',
+//     headers: { 'Content-Type': 'application/json' },
+//   });
+
+//   if (response.ok) {
+//     document.location.replace('/login');
+//     alert("You have deleted your account. See you soon!");
+//   } else {
+//     alert(response.statusText);
+//   }
+// };
+
+// deleteB.addEventListener('click', deletebutton);
 
 
 
@@ -58,3 +62,5 @@ const newFigureHandler = async (event) => {
   //   .querySelector('.project-list')
   //   .addEventListener('click', delButtonHandler);
   
+  // document
+  //   .querySelector('.')

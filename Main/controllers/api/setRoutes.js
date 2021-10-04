@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Sets, User } = require('../../models');
+const { Set, User } = require('../../models');
 const withAuth = require ('../../utils/auth')
 
 // create new figure
 router.post('/', withAuth, async (req, res) => {
   // try {
     console.log(req.body)
-    const newSet = await Sets.create({
+    const newSet = await Set.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -18,30 +18,30 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // get all sets that the current user has
-router.get('/', withAuth,async (req, res) => {
-  console.log(req.session.user_id);
-  try {
-    const currentUser = await User.findOne({ where: { id: req.session.user_id } });
-    const currUser = currentUser.get({ plain: true });
-    console.log(currUser)
-    const setData = await Set.findAll({
-      where: { set_name: currUser.set_name}
-    });
+// router.get('/', withAuth,async (req, res) => {
+//   console.log(req.session.user_id);
+//   try {
+//     const currentUser = await User.findOne({ where: { id: req.session.user_id } });
+//     const currUser = currentUser.get({ plain: true });
+//     console.log(currUser)
+//     const setData = await Set.findAll({
+//       where: { set_name: currUser.set_name}
+//     });
 
-    // Serialize data so the template can read it
-    const sets = setData.map((sets) => sets.get({ plain: true }));
+//     // Serialize data so the template can read it
+//     const sets = setData.map((sets) => sets.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
-    res.render('mySets', { 
-      sets, 
-      currentUser: currUser,
-      logged_in: req.session.logged_in 
-    });
-    return(currUser, setData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     // Pass serialized data and session flag into template
+//     res.render('mySets', { 
+//       sets, 
+//       currentUser: currUser,
+//       logged_in: req.session.logged_in 
+//     });
+//     return(currUser, setData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // delete set
 // router.delete('/figure/delete/:id', async (req, res) => {

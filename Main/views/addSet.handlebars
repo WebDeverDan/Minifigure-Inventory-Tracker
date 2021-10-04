@@ -1,4 +1,4 @@
-<h2 class="newSetHeader">Add a New Set to Your Collection!</h2>
+<h2 class='newSetHeader'>Add a New Set to Your Collection!</h2>
 
 <div class='col-sm4 col-md-6 col-lg-12 mb-3 newset_container'>
   <form class='needs-validation' novalidate>
@@ -7,9 +7,22 @@
         <label for='set-name'>Set name</label>
         <input
           type='text'
-          class='form-control'
+          class='form-control fst-italic'
           id='set-name'
           placeholder='Set name'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-number'>Set Number</label>
+        <input
+          type='text'
+          class='form-control fst-italic'
+          id='set-number'
+          placeholder='Set number'
           required
         />
         <div class='valid-feedback'>
@@ -20,7 +33,7 @@
         <label for='set-theme'>Set Theme</label>
         <input
           type='text'
-          class='form-control'
+          class='form-control fst-italic'
           id='set-theme'
           placeholder='Set Theme'
           required
@@ -29,48 +42,48 @@
           Looks good!
         </div>
       </div>
-        <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
-          <label for='set-value'>Value($)</label>
-          <input
-            type='number'
-            class='set-value'
-            id='set-value'
-            placeholder='$$'
-            required
-          />
-          <div class='invalid-feedback'>
-            Please provide a valid value.
-          </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-value'>Value($)</label>
+        <input
+          type='number'
+          class='set-value form-control fst-italic'
+          id='set-value'
+          placeholder='$$'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please provide a valid value.
         </div>
-       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='set-quantity'>Quantity</label>
-        <div class='input-group'>
-          <div class='set-quantity'>
-          </div>
-          <input
-            type='number'
-            class='form-control'
-            id='set-quantity'
-            placeholder='Quantity'
-            required
-          />
-          <div class='invalid-feedback'>
-            Please enter a valid quantity.
-          </div>
+
+        <div class='set-quantity'>
+        </div>
+        <input
+          type='number'
+          class='fst-italic form-control'
+          id='set-quantity'
+          placeholder='Quantity'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please enter a valid quantity.
+
         </div>
       </div>
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='condition'>Condition</label>
-        <select id="condition" name="condition">
-           <option class="condition" value="null"></option>
-          <option class="condition" value="sealed">Sealed</option>
-          <option class="condition" value="new">New</option>
-          <option class="condition" value="like-new">Like-New</option>
-          <option class="condition" value="great">Great</option>
-          <option class="condition" value="good">Good</option>
-          <option class="condition" value="fair">Fair</option>
-          <option class="condition" value="poor">Poor</option>
-          <option class="condition" value="incomplete">Incomplete</option>
+        <select id='condition' class='form-control' name='condition'>
+          <option class='condition' value='null'></option>
+          <option class='condition' value='sealed'>Sealed</option>
+          <option class='condition' value='new'>New</option>
+          <option class='condition' value='like-new'>Like-New</option>
+          <option class='condition' value='great'>Great</option>
+          <option class='condition' value='good'>Good</option>
+          <option class='condition' value='fair'>Fair</option>
+          <option class='condition' value='poor'>Poor</option>
+          <option class='condition' value='incomplete'>Incomplete</option>
         </select>
         <div class='invalid-feedback'>
           Please select a condition.
@@ -78,10 +91,10 @@
       </div>
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='set-favorite'>Is it your favorite set?</label>
-        <select id="set-favorite" name="favorite">
-           <option class="set-favorite" value=""></option>
-          <option class="set-favorite" value="yes">Yes</option>
-          <option class="set-favorite" value="no">No</option>
+        <select id='set-favorite' class='form-control' name='favorite'>
+          <option class='set-favorite' value=''></option>
+          <option class='set-favorite' value='yes'>Yes</option>
+          <option class='set-favorite' value='no'>No</option>
         </select>
         <div class='valid-feedback'>
           Please choose an answer.
@@ -102,9 +115,12 @@
       </div>
     </div>
     <div class='create_Btn'>
-    <button type='click' class='btn btn-primary add_setBtn'>Add Set</button>
+      <button type='click' class='btn add_setBtn'>Add Set</button>
     </div>
   </form>
+  <p class='fst-italic recommendation_text'>It is recommended that you use
+    Bricklink (found in resources) for the most accurate set information and pricing. A good
+    rule of thumb is to use the past 6 month average for a good idea of value.</p>
 </div>
 
-<script src="/js/set.js"></script>
+<script src='/js/set.js'></script>

@@ -17,29 +17,49 @@ router.post('/', withAuth, async (req, res) => {
   // }
 });
 
+router.put('/', withAuth, async(req, res) => {
+  console.log(req.body)
+  try {
+    const figureData = await Figure.update({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!figureData) {
+      res.status(404).json({ message: 'No figure found with this id!' });
+      return;
+    }
+
+    res.status(200).json(figureData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 
 
 
 // delete figure
-// router.delete('/figure/delete/:id', async (req, res) => {
-//   try {
-//     const figureData = await Figure.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
+router.delete('/figure/delete/:id', async (req, res) => {
+  try {
+    const figureData = await Figure.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
 
-//     if (!figureData) {
-//       res.status(404).json({ message: 'No figure found with this id!' });
-//       return;
-//     }
+    if (!figureData) {
+      res.status(404).json({ message: 'No figure found with this id!' });
+      return;
+    }
 
-//     res.status(200).json(figureData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.status(200).json(figureData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
