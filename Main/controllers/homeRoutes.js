@@ -77,6 +77,28 @@ router.get('/mySets', withAuth, async (req, res) => {
   // }
 });
 
+router.get('/editFigure/:id', withAuth, async (req, res) => {
+  // console.log(req.session.user_id);
+  // try {
+    // Find the logged in user based on the session ID
+    // const currentUser = await User.findOne({ where: { id: req.session.user_id } });
+    // const currUser = currentUser.get({ plain: true });
+    // console.log(currUser)
+    const figureData = await Figure.findByPk(req.params.id);
+
+    const figure = figureData.get({ plain: true });
+  
+    res.render('editFigure', {
+      figure,
+      logged_in: req.session.logged_in 
+    });
+
+    // return(currUser, userData);
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+});
+
 
 
 

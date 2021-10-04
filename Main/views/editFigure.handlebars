@@ -9,7 +9,7 @@
           type='text'
           class='form-control fst-italic'
           id='figure-name'
-          placeholder=''
+          placeholder='{{figure.name}}'
           required
         />
         <div class='valid-feedback'>
@@ -22,7 +22,7 @@
           type='text'
           class='form-control fst-italic'
           id='figure-theme'
-          placeholder='Figure Theme'
+          placeholder='{{figure.theme}}'
           required
         />
         <div class='valid-feedback'>
@@ -35,7 +35,7 @@
             type='number'
             class='figure-value form-control fst-italic'
             id='figure-value'
-            placeholder='$$'
+            placeholder='{{figure.value}}'
             required
           />
           <div class='invalid-feedback'>
@@ -51,7 +51,7 @@
             type='number'
             class='figure-quantity form-control fst-italic'
             id='figure-quantity'
-            placeholder='Quantity'
+            placeholder='{{figure.quantity}}'
             required
           />
           <div class='invalid-feedback'>
@@ -61,7 +61,7 @@
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='condition'>Condition</label>
         <select class="form-control" id="condition" name="condition">
-          <option class="condition" value=""></option>
+          <option class="condition" value="">{{figure.condition}}</option>
           <option class="condition" value="sealed">Sealed</option>
           <option class="condition" value="new">New</option>
           <option class="condition" value="like-new">Like-New</option>
@@ -78,7 +78,7 @@
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='figure-rarity'>Is it rare?</label>
         <select id="rarity" class="form-control" name="rarity">
-          <option class="rarity" value="null"></option>
+          <option class="rarity" value="null">{{figure.rare}}</option>
           <option class="rarity" value="rare">Rare</option>
           <option class="rarity" value="notRare">Not Rare</option>
         </select>
@@ -89,7 +89,7 @@
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='figure-favorite'>Is this your favorite figure?</label>
         <select id="favorite" class="form-control" name="favorite">
-          <option class="favorite" value="null"></option>
+          <option class="favorite" value="null">{{figure.favorite}}</option>
           <option class="favorite" value="yes">Yes</option>
           <option class="favorite" value="no">No</option>
         </select>
@@ -103,7 +103,7 @@
           type='text'
           class='form-control fst-italic '
           id='figure-notes'
-          placeholder='Notes'
+          placeholder='{{figure.notes}}'
           required
         />
         <div class='valid-feedback'>
@@ -112,11 +112,11 @@
       </div>
     </div>
     <div class="create_Btn">
-    <button class='btn save_figBtn' type='click'>Save</button>
-    <button class='btn delete_figBtn' type='click'>Delete Figure</button>
+    <button class='btn save_figBtn' data-id="{{figure.id}}" type='click'>Save</button>
+    <button class='btn delete_figBtn' data-id="{{figure.id}}" type='click'>Delete Figure</button>
     </div>
   </form>
   <p class="fst-italic recommendation_text">It is recommended that you use Bricklink (found in resources) for the most accurate figure pricing. A good rule of thumb is to use the past 6 month average for a good idea of value.</p>
 </div>
 
-{{!-- <script src="/js/figure.js"></script> --}}
+<script src="/js/editfigure.js"></script>

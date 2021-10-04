@@ -17,15 +17,19 @@ router.post('/', withAuth, async (req, res) => {
   // }
 });
 
-router.put('/', withAuth, async(req, res) => {
+router.put('/update/:id', withAuth, async(req, res) => {
   console.log(req.body)
-  try {
+  // try {
     const figureData = await Figure.update({
-      where: {
+      ...req.body,
+    },
+    {
+     where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        // user_id: req.session.user_id,
       },
-    });
+    }
+    );
 
     if (!figureData) {
       res.status(404).json({ message: 'No figure found with this id!' });
@@ -33,9 +37,9 @@ router.put('/', withAuth, async(req, res) => {
     }
 
     res.status(200).json(figureData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 })
 
 

@@ -28,7 +28,16 @@ const newFigureHandler = async (event) => {
     }
   };
   
-  
+
+
+
+
+
+
+
+
+
+
 // const deleteB = document.querySelector("#delete_button");
 // console.log(deleteB)
 
@@ -58,9 +67,11 @@ const newFigureHandler = async (event) => {
     .querySelector('.add_figBtn')
     .addEventListener('click', newFigureHandler);
   
+
+ 
+
+
   // document
   //   .querySelector('.project-list')
   //   .addEventListener('click', delButtonHandler);
   
-  // document
-  //   .querySelector('.')
