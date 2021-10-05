@@ -12,7 +12,7 @@ const editFigureHandler = async (event) => {
     const figureID = event.target.getAttribute("data-id");
 
     if (name || theme || value || quantity || condition || rare || favorite || notes) {
-      const response = await fetch(`/figure/${figureID}`, {
+      const response = await fetch(`/api/figure/${figureID}`, {
         method: 'PUT',
         body: JSON.stringify({ name, theme, value, quantity, condition, rare, favorite, notes }),
         headers: {

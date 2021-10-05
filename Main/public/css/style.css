@@ -33,10 +33,23 @@ body::after {
     z-index: -1;   
   }
 
+  .emmet_photo{
+      width: 20%;
+      padding-bottom: .5em;
+  }
+
+  .lego_photo{
+      width: 15%;
+      padding-bottom: .5em;
+  }
 .side_nav {
     display: flex;
     flex-direction: column;
     width: 15%;
+    border: solid;
+    background-color: white;
+    height: 100%;
+    font-size: 20px;
 }
 .main_window {
     display: flex;
@@ -71,13 +84,15 @@ body::after {
 .dashboardBtn{
     background:yellow;
     font-family: 'Bungee', cursive;
-    margin-top: .5em;
+    /* margin-top: .5em; */
     border: solid;
     border-color: black;
     border-left: none;
-    border-radius: 5px;
+    border-right: none;
+    border-top: none;
+    /* border-radius: 5px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     transition: 0.3s; 
 }
 .dashboardBtn:hover {
@@ -86,13 +101,15 @@ body::after {
 .my_figuresBtn {
     background:limegreen;
     font-family: 'Bungee', cursive;
-    margin-top: .5em;
+    /* margin-top: .5em; */
     border: solid;
     border-color: black;
     border-left: none;
-    border-radius: 5px;
+    border-right: none;
+    border-top: none;
+    /* border-radius: 5px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     transition: 0.3s;
 }
 .my_figuresBtn:hover {
@@ -112,13 +129,15 @@ body::after {
 .add_figuresBtn {
     background:darkseagreen;
     font-family: 'Bungee', cursive;
-    margin-top: .5em;
+    /* margin-top: .5em; */
     border: solid;
     border-color: black;
     border-left: none;
-    border-radius: 5px;
+    border-right: none;
+    border-top: none;
+    /* border-radius: 5px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     transition: 0.3s;
 }
 .add_figuresBtn:hover {
@@ -128,13 +147,15 @@ body::after {
 .my_setsBtn {
     background:turquoise;
     font-family: 'Bungee', cursive;
-    margin-top: .5em;
+    /* margin-top: .5em; */
     border: solid;
     border-color: black;
     border-left: none;
-    border-radius: 5px;
+    border-right: none;
+    border-top: none;
+    /* border-radius: 5px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     transition: 0.3s;
 }
 
@@ -145,13 +166,15 @@ body::after {
 .add_setsBtn {
     background:cornflowerblue;
     font-family: 'Bungee', cursive;
-    margin-top: .5em;
+    /* margin-top: .5em; */
     border: solid;
     border-color: black;
     border-left: none;
-    border-radius: 5px;
+    border-right: none;
+    border-top: none;
+    /* border-radius: 5px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     transition: 0.3s;
 }
 .add_setsBtn:hover {
@@ -161,13 +184,16 @@ body::after {
 .research_figuresBtn {
     background:orangered;
     font-family: 'Bungee', cursive;
-    margin-top: .5em;
-    border: solid;
+    /* margin-top: .5em; */
+    /* border: solid; */
     border-color: black;
     border-left: none;
-    border-radius: 5px;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    /* border-radius: 5px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
     transition: 0.3s;
 }
 
@@ -400,6 +426,7 @@ body::after {
     flex-grow: inherit;
 }
 .grid_header{
+    padding-top: .5em;
     padding-right: 1em;
     padding-left: 1em;
     /* border: solid; */

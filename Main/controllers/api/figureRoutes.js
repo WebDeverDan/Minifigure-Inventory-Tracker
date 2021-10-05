@@ -17,18 +17,15 @@ router.post('/', withAuth, async (req, res) => {
   // }
 });
 
-router.put('/update/:id', withAuth, async(req, res) => {
+router.put('/figure', withAuth, async(req, res) => {
   console.log(req.body)
   // try {
     const figureData = await Figure.update({
       ...req.body,
-    },
-    {
-     where: {
+      where: {
         id: req.params.id,
-        // user_id: req.session.user_id,
-      },
-    }
+            },
+    },
     );
 
     if (!figureData) {
