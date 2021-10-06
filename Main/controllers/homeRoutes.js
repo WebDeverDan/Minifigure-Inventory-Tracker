@@ -1,32 +1,58 @@
 const router = require('express').Router();
 const { User, Figure, Set } = require('../models');
 const withAuth = require('../utils/auth');
+const sequelize = require('sequelize');
 
 // loads homepage upon login
 router.get('/', withAuth, async (req, res) => {
   console.log(req.session.user_id);
 
-  try {
+  // try {
     // Get all suggested matches and JOIN with user data
     const currentUser = await User.findOne({
       where: { id: req.session.user_id },
     });
+  
+    const figureData = await Figure.count({
+      where: { id: req.session.user_id},
+    });
+
+
+  const setTotal = await Set.findAll({
+    attributes: [
+      'user_id',
+      [sequelize.fn('sum', sequelize.col('quantity')), 'quantity'],
+    ],
+    group: ['user_id'],
+    // where: { id: req.session.user_id},
+  });
+
+  const setData = await Set.findAll({
+    where: { id: req.session.user_id, total: setTotal },
+  });
+
+
     const currUser = currentUser.get({ plain: true });
     console.log(currUser);
-    //console.log(currentUser);
 
-    // Serialize data so the template can read it
+    // const figData = figureData.get({ plain: true});
+
+    // console.log(figData);
+
     // const users = userData.map((user) => user.get({ plain: true }));
-    // Pass serialized data and session flag into template
+
+    
     res.render('homepage', {
       // users,
       currentUser: currUser,
+      figureData: figureData,
+      setData: setData,
       logged_in: req.session.logged_in,
     });
     return currUser;
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 router.get('/myFigures', withAuth, async (req, res) => {
@@ -40,10 +66,13 @@ router.get('/myFigures', withAuth, async (req, res) => {
       where: { user_id: req.session.user_id}
     });
 
+    
+
     const figures = figureData.map((figure) => figure.get({ plain: true }));
   
     res.render('myFigures', {
       figures,
+      figureSum,
       logged_in: req.session.logged_in 
     });
 

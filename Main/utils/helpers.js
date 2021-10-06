@@ -19,4 +19,7 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  get_length: (obj) =>  {
+    return obj.length
+   },
 };
