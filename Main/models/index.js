@@ -1,6 +1,6 @@
 const User = require('./user');
 const Figure = require('./figure');
-const Set = require('./set');
+const Kit = require('./kit');
 
 
 User.hasMany(Figure, {
@@ -11,14 +11,14 @@ Figure.belongsTo(User, {
   foreignKey:'user_id',
 });
 
-User.hasMany(Set, {
+User.hasMany(Kit, {
   foreignKey: 'user_id',
 });
 
-Set.belongsTo(User, {
+Kit.belongsTo(User, {
   foreignKey: 'user_id',
 })
 
 
 
-module.exports = { User, Figure, Set };
+module.exports = { User, Figure, Kit };
