@@ -8,30 +8,30 @@
     <div class="col-sm">Quantity</div>
     <div class="col-sm">Condition</div>
     <div class="col-sm">Value</div>
-    <div class="col-sm">Favorite Fig?</div>
+    <div class="col-sm">Total Value ($ {{kitValue}})</div>
     <div class="col-sm">Notes</div>
   </div>
 <div class="itemconfiguration">
-{{#if sets.length}}
-{{#each sets as |set|}}
+{{#if kits.length}}
+{{#each kits as |kit|}}
 <div class="container-fluid">
 <div class="row mb-4 figure-grid">
   <div class="row grid_content">
-    <div class="col-sm">{{set.name}}</div>
-    <div class="col-sm">{{set.theme}}</div>
-    <div class="col-sm">{{set.quantity}}</div>
-    <div class="col-sm">{{set.condition}}</div>
-    <div class="col-sm">${{set.value}}</div>
-    <div class="col-sm">{{set.favorite}}</div>
-    <div class="col-sm">{{set.notes}}</div>
+    <div class="col-sm">{{kit.name}}</div>
+    <div class="col-sm">{{kit.theme}}</div>
+    <div class="col-sm">{{kit.quantity}}</div>
+    <div class="col-sm">{{kit.condition}}</div>
+    <div class="col-sm">${{kit.value}}</div>
+    <div class="col-sm">${{multiply kit.value kit.quantity}}</div>
+    <div class="col-sm">{{kit.notes}}</div>
   </div>
   <div class="figure_Btns">
     <button
             class='banner_btn edit_figuresBtn'
-            id='edit_figuresBtn'
+            id='edit_setBtn'
             type='submit'
-            data-id="{{set.id}}"
-            {{!-- onclick="location.href='/editFigure'" --}}
+            data-id="{{kit.id}}"
+            onclick="location.href='/editSet/{{kit.id}}'"
           >Edit</button>
   </div>
 </div>
@@ -40,3 +40,11 @@
 {{/if}}
 </div>
 </div>
+<button
+            class='banner_btn add_a_new_figBtn'
+            id='add_figuresBtn'
+            type='submit'
+            onclick="location.href='/addSet'"
+          >Add Another Set</button>
+
+{{!-- <script src="/js/editSet.js"></script> --}}
