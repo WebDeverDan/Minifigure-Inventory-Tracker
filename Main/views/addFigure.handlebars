@@ -1,4 +1,4 @@
-<h2 class="addFigHeader">Add a New Figure to Your Collection!</h2>
+<h2 class='addFigHeader'>Add a New Figure to Your Collection!</h2>
 
 <div class='col-sm4 col-md-6 col-lg-12 mb-3 newset_container'>
   <form class='needs-validation' novalidate>
@@ -29,47 +29,60 @@
           Looks good!
         </div>
       </div>
-        <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
-          <label for='figure-value'>Value($)</label>
-          <input
-            type='number'
-            class='figure-value form-control fst-italic'
-            id='figure-value'
-            placeholder='$$'
-            required
-          />
-          <div class='invalid-feedback'>
-            Please provide a valid value.
-          </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='figure-value'>Value($)</label>
+        <input
+          type='number'
+          class='figure-value form-control fst-italic'
+          id='figure-value'
+          placeholder='$'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please provide a valid value.
         </div>
+      </div>
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='figure-quantity'>Quantity</label>
-        
-          <div class='figure-quantity'>
-          </div>
-          <input
-            type='number'
-            class='figure-quantity form-control fst-italic'
-            id='figure-quantity'
-            placeholder='Quantity'
-            required
-          />
-          <div class='invalid-feedback'>
-            Please enter a valid quantity.
-          </div>
+
+        <div class='figure-quantity'>
+        </div>
+        <input
+          type='number'
+          class='figure-quantity form-control fst-italic'
+          id='figure-quantity'
+          placeholder='Quantity'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please enter a valid quantity.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='fig_totalV'>What is the total value?($)</label>
+        <input
+          type='number'
+          class='fig_totalV form-control fst-italic'
+          id='fig_totalV'
+          placeholder='total $ amount'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please choose an answer.
+        </div>
       </div>
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='condition'>Condition</label>
-        <select class="form-control" id="condition" name="condition">
-          <option class="condition" value=""></option>
-          <option class="condition" value="sealed">Sealed</option>
-          <option class="condition" value="new">New</option>
-          <option class="condition" value="like-new">Like-New</option>
-          <option class="condition" value="great">Great</option>
-          <option class="condition" value="good">Good</option>
-          <option class="condition" value="fair">Fair</option>
-          <option class="condition" value="poor">Poor</option>
-          <option class="condition" value="incomplete">Incomplete</option>
+        <select class='form-control' id='condition' name='condition'>
+          <option class='condition' value=''></option>
+          <option class='condition' value='sealed'>Sealed</option>
+          <option class='condition' value='new'>New</option>
+          <option class='condition' value='like-new'>Like-New</option>
+          <option class='condition' value='great'>Great</option>
+          <option class='condition' value='good'>Good</option>
+          <option class='condition' value='fair'>Fair</option>
+          <option class='condition' value='poor'>Poor</option>
+          <option class='condition' value='incomplete'>Incomplete</option>
         </select>
         <div class='invalid-feedback'>
           Please select a condition.
@@ -77,31 +90,20 @@
       </div>
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='figure-rarity'>Is it rare?</label>
-        <select id="rarity" class="form-control" name="rarity">
-          <option class="rarity" value="null"></option>
-          <option class="rarity" value="rare">Rare</option>
-          <option class="rarity" value="notRare">Not Rare</option>
+        <select id='rarity' class='form-control' name='rarity'>
+          <option class='rarity' value='null'></option>
+          <option class='rarity' value='rare'>Rare</option>
+          <option class='rarity' value='notRare'>Not Rare</option>
         </select>
         <div class='invalid-feedback'>
           Please choose a value.
         </div>
       </div>
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
-        <label for='figure-favorite'>Is this your favorite figure?</label>
-        <select id="favorite" class="form-control" name="favorite">
-          <option class="favorite" value="null"></option>
-          <option class="favorite" value="yes">Yes</option>
-          <option class="favorite" value="no">No</option>
-        </select>
-        <div class='invalid-feedback'>
-          Please choose an answer.
-        </div>
-      </div>
-      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='figure-notes'>Notes</label>
         <input
           type='text'
-          class='form-control fst-italic '
+          class='form-control fst-italic'
           id='figure-notes'
           placeholder='Notes'
           required
@@ -110,14 +112,17 @@
           Looks good!
         </div>
       </div>
-      <img class="emmet_photo" src="/images/emmet.jpeg"/>
+      <img class='emmet_photo' src='/images/emmet.jpeg' />
     </div>
-    <div class="create_Btn">
-    <button class='btn add_figBtn' type='click'>Add Figure</button>
+    <div class='create_Btn'>
+      
+      <button class='banner_btn add_figBtn' type='click'>Add Figure</button>
     </div>
   </form>
-  
-  <p class="fst-italic recommendation_text">It is recommended that you use Bricklink (found in resources) for the most accurate figure pricing. A good rule of thumb is to use the past 6 month average for a good idea of value.</p>
+
+  <p class='fst-italic recommendation_text'>It is recommended that you use
+    Bricklink (found in resources) for the most accurate figure pricing. A good
+    rule of thumb is to use the past 6 month average for a good idea of value.</p>
 </div>
 
-<script src="/js/figure.js"></script>
+<script src='/js/figure.js'></script>
