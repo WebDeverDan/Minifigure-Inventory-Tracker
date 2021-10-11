@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Slave 1",
+    "number": 1345,
+    "theme": "Star Wars",
+    "quantity": 2,
+    "condition": "good",
+    "value": 200,
+    "total_v": "400",
+    "notes": "In great shape!",
+    "user_id": 1
+  },
+  {
+    "name": "Slave 1 UCS",
+    "number": 1346,
+    "theme": "Star Wars",
+    "quantity": 3,
+    "condition": "great",
+    "value": 350,
+    "total_v": 1050,
+    "notes": "In great shape!",
+    "user_id": 1
+  }
+]
