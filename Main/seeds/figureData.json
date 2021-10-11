@@ -2,11 +2,11 @@
     {
       "name": "White Boba Fett",
       "theme": "Star Wars",
-      "quantity": "1",
+      "quantity": 1,
       "condition": "good",
       "rare": "rare",
       "value": 150,
-      "favorite": "yes",
+      "total_v": 150,
       "notes": "In great shape!",
       "user_id": 1
     }
