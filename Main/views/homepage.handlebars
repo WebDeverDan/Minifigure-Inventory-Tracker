@@ -1,20 +1,39 @@
-
-
-<h2 class="login_welcome">{{currentUser.first_name}}'s Collector Dashboard</h2>
-<div class="card profile_info" style="width: 50%;">
-  {{!-- <img/> --}}
-  <ul class="list-group profile_list profile_text_list list-group-flush">
-    <li class="list-group-item profile_text fs-5">Name: {{currentUser.first_name}}</li>
-    <li class="list-group-item profile_text fs-5">Email: {{currentUser.email}}</li>
-    <li class="list-group-item profile_text fs-5">Age: {{currentUser.age}}</li>
-    <li class="list-group-item profile_text fs-5">Years Collecting: {{currentUser.years_collecting}}</li>
-    <li class="list-group-item profile_text fs-5">Favorite Figure: {{currentUser.favorite_fig}}</li>
-    <li class="list-group-item profile_text fs-5">You Have {{figureData}} figure(s) in your collection</li>
-    <li class="list-group-item profile_text fs-5">You Have {{setData}} set(s) in your collection</li>
-    <li class="list-group-item profile_text fs-5">Your collection is worth $$</li>
-  </ul>
+<h2 class='login_welcome'>{{currentUser.first_name}}'s Collector Dashboard</h2>
+<div class='profile-page'>
+<div class='card profile_info' style='width: 50%;'>
+  {{! <img/> }}
+  <div>
+    <ul class='list-group profile_list profile_text_list list-group-flush'>
+      <li class='list-group-item profile_text fs-5'>Name: <span class="profile_spec_text">
+        {{currentUser.first_name}}</span></li>
+      <li class='list-group-item profile_text fs-5'>Email: <span class="profile_spec_text">
+        {{currentUser.email}}</span></li>
+      <li class='list-group-item profile_text fs-5'>Age: <span class="profile_spec_text">
+        {{currentUser.age}}</span></li>
+      <li class='list-group-item profile_text fs-5'>Years Collecting: <span class="profile_spec_text">
+        {{currentUser.years_collecting}}</span></li>
+      <li class='list-group-item profile_text fs-5'>Favorite Figure: <span class="profile_spec_text" >
+        {{currentUser.favorite_fig}}</span></li>
+    </ul>
+  </div>
 </div>
-{{!-- <img> --}}
-<div class="update_profile_Btn"></div>
+  <div class='card profile_info' style='width: 50%;'>
+  <div>
+  <ul class='list-group profile_list profile_text_list list-group-flush'>
+    <li class='list-group-item profile_text fs-5'>Figures in your collection: <span class="profile_spec_text">
+      {{figTotal}}</span></li>
+    <li class='list-group-item profile_text fs-5'>Sets in your collection: <span class="profile_spec_text">
+      {{kitTotal}}</span></li>
+    <li class='list-group-item profile_text fs-5' >Your figures are worth:<span class="profile_spec_text"> ${{figValue}}.00</span></li>
+    <li class='list-group-item profile_text fs-5'>Your sets are worth: <span class="profile_spec_text"> ${{kitValue}}.00</span></li>
+    <li class='list-group-item profile_text fs-5'>Your collection is worth: <span class="profile_spec_text"> ${{collectionValue}}.00</span></li>
+  </ul>
+  </div>
+  </div>
+</div>
 
+{{! <img> }}
+<div class='update_profile_Btn'></div>
+</div>
 
+<script src='/js/homepage.js'></script>
