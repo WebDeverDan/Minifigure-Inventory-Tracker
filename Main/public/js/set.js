@@ -1,10 +1,4 @@
 const newSetHandler = async (event) => {
-  const options = {
-    settings: {
-      duration: 5000,
-    }
-};
-  
   event.preventDefault();
    
     
@@ -13,25 +7,25 @@ const newSetHandler = async (event) => {
     const theme= document.querySelector('#set-theme').value.trim();
     const value = document.querySelector('#set-value').value.trim();
     const quantity = document.querySelector('#set-quantity').value.trim();
-    const condition = document.querySelector('#condition').value.trim();
-    const favorite = document.querySelector('#set-favorite').value.trim();
+    const condition = document.querySelector('#set-condition').value.trim();
+    const total_v = document.querySelector('#set-totalV').value.trim();
     const notes = document.querySelector('#set-notes').value.trim();
   
-    if (name && number && theme && value && quantity && condition && favorite && notes) {
-      const response = await fetch(`/api/set`, {
+    if (name && number && theme && value && quantity && condition && total_v && notes) {
+      const response = await fetch(`/api/kit`, {
         method: 'POST',
-        body: JSON.stringify({ name, number, theme, value, quantity, condition, favorite, notes }),
+        body: JSON.stringify({ name, number, theme, value, quantity, condition, total_v, notes }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        alert("Set Added!");
-        document.location.replace('/mySets');
-      } else {
-        iqwerty.toast.toast('Whoops There Was an Error');
-      }
+        swal({title: "Set Added!", text: "Click OK to keep adding sets", icon: "success"})
+        .then((value) =>
+        parent.window.location="/addSet"
+      );
+      } 
     }
   };
   
