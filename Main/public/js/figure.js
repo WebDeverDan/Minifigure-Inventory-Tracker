@@ -1,3 +1,5 @@
+
+
 const newFigureHandler = async (event) => {
     event.preventDefault();
    
@@ -7,24 +9,25 @@ const newFigureHandler = async (event) => {
     const quantity = document.querySelector('#figure-quantity').value.trim();
     const condition = document.querySelector('#condition').value.trim();
     const rare = document.querySelector('#rarity').value.trim();
-    const favorite = document.querySelector('#favorite').value.trim();
+    const total_v = document.querySelector('#fig_totalV').value.trim();
     const notes = document.querySelector('#figure-notes').value.trim();
   
-    if (name && theme && value && quantity && condition && rare && favorite && notes) {
+    if (name && theme && value && quantity && condition && rare && total_v && notes) {
       const response = await fetch(`/api/figure`, {
         method: 'POST',
-        body: JSON.stringify({ name, theme, value, quantity, condition, rare, favorite, notes }),
+        body: JSON.stringify({ name, theme, value, quantity, condition, rare, total_v, notes }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        alert('Figure Created!');
-        document.location.replace('/myFigures');
-      } else {
-        alert('Failed to create figure');
-      }
+        // document.location.replace('/addFigure');
+        swal({title: "Figure Added!", text: "Click OK to keep adding figs", icon: "success"})
+        .then((value) =>
+        parent.window.location="/addFigure"
+      );
+      } 
     }
   };
   
