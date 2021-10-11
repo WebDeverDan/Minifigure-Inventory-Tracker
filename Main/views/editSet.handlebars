@@ -1,0 +1,143 @@
+<h2 class='addFigHeader'>Edit This Set!</h2>
+
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 newset_container'>
+  <form class='needs-validation' novalidate>
+    <div class='form-row'>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-name fs-5'>Set name</label>
+        <input
+          type='text'
+          class='form-control fst-italic'
+          id='set-name'
+          value='{{kit.name}}'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-theme'>Figure Theme</label>
+        <input
+          type='text'
+          class='form-control fst-italic'
+          id='set-theme'
+          value='{{kit.theme}}'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-number'>Number</label>
+        <input
+          type='number'
+          class='set-number form-control fst-italic'
+          id='set-number'
+          value='{{kit.number}}'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please provide a valid number.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-value'>Value($)</label>
+        <input
+          type='number'
+          class='set-value form-control fst-italic'
+          id='set-value'
+          value='{{kit.value}}'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please provide a valid value.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-quantity'>Quantity</label>
+
+        <div class='set-quantity'>
+        </div>
+        <input
+          type='number'
+          class='set-quantity form-control fst-italic'
+          id='set-quantity'
+          value='{{kit.quantity}}'
+          required
+        />
+        <div class='invalid-feedback'>
+          Please enter a valid quantity.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-totalV'>What's the total value?</label>
+        <input
+          type='number'
+          class='fst-italic form-control'
+          id='set-totalV'
+          value='{{multiply kit.value kit.quantity}}'
+          required
+        />
+        <div class='valid-feedback'>
+          Please choose an answer.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-condition'>Condition</label>
+        <select
+          class='form-control'
+          data-condition='{{kit.condition}}'
+          id='set-condition'
+          name='set-condition'
+        >
+          <option class='set-condition' value=''></option>
+          <option class='set-condition' value='sealed'>Sealed</option>
+          <option class='set-condition' value='new'>New</option>
+          <option class='set-condition' value='like-new'>Like-New</option>
+          <option class='set-condition' value='great'>Great</option>
+          <option class='set-condition' value='good'>Good</option>
+          <option class='set-condition' value='fair'>Fair</option>
+          <option class='set-condition' value='poor'>Poor</option>
+          <option class='set-condition' value='incomplete'>Incomplete</option>
+        </select>
+        <div class='invalid-feedback'>
+          Please select a condition.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-notes'>Notes</label>
+        <input
+          type='text'
+          class='form-control fst-italic'
+          id='set-notes'
+          value='{{kit.notes}}'
+          required
+        />
+        <div class='valid-feedback'>
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class='create_Btn'>
+      <button
+        class='btn save_figBtn'
+        id='save_setBtn'
+        data-id='{{kit.id}}'
+        type='click'
+      >Save</button>
+      <button
+        class='btn delete_figBtn'
+        id='delete_setBtn'
+        data-id='{{kit.id}}'
+        type='click'
+      >Delete Set</button>
+    </div>
+  </form>
+  <p class='fst-italic recommendation_text'>It is recommended that you use
+    Bricklink (found in resources) for the most accurate set pricing. A good
+    rule of thumb is to use the past 6 month average for a good idea of value.</p>
+</div>
+
+<script src='/js/editSet.js'></script>
