@@ -1,14 +1,16 @@
 const router = require('express').Router();
-const { User, Figure, Set } = require('../models');
+const { User, Figure, Kit } = require('../models');
 const withAuth = require('../utils/auth');
 const sequelize = require('sequelize');
+const { ForeignKeyConstraintError, SequelizeScopeError } = require('sequelize');
+var helpers = require('handlebars-helpers');
+var math = helpers.math();
 
 // loads homepage upon login
 router.get('/', withAuth, async (req, res) => {
   console.log(req.session.user_id);
 
   // try {
-    // Get all suggested matches and JOIN with user data
     const currentUser = await User.findOne({
       where: { id: req.session.user_id },
     });
@@ -17,36 +19,62 @@ router.get('/', withAuth, async (req, res) => {
       where: { id: req.session.user_id},
     });
 
+    // // total quantity of sets
+    const kitTotal = await Kit.sum('quantity', {
+      where: {user_id: req.session.user_id }
+    });
+    
+    // // total value of sets
+    // const kitValue = await Kit.sum('value', {
+    //   where: {user_id: req.session.user_id }
+    // });
 
-  const setTotal = await Set.findAll({
-    attributes: [
-      'user_id',
-      [sequelize.fn('sum', sequelize.col('quantity')), 'quantity'],
-    ],
-    group: ['user_id'],
-    // where: { id: req.session.user_id},
-  });
+    // const kitTotalIndiv = kitTotal ** kitValue;
+    // // total value for each figure entry
+    
 
-  const setData = await Set.findAll({
-    where: { id: req.session.user_id, total: setTotal },
-  });
+    // total figure quantity
+    const figTotal = await Figure.sum('quantity', {
+      where: {user_id: req.session.user_id }
+    });
 
+    // total value of figures
+    const figValue = await Figure.sum('total_v', {
+      where: {user_id: req.session.user_id }
+    });
+    const kitValue = await Kit.sum('total_v', {
+      where: {user_id: req.session.user_id }
+    })
+  
+
+    const collectionValue = kitValue + figValue;
+    // console.log(collectionValue)
+
+    const kitData = await Kit.findAll({
+    where: {id: req.session.user_id }
+    });
+    // console.log(kitData);
 
     const currUser = currentUser.get({ plain: true });
     console.log(currUser);
-
-    // const figData = figureData.get({ plain: true});
-
-    // console.log(figData);
-
+    
     // const users = userData.map((user) => user.get({ plain: true }));
-
     
     res.render('homepage', {
       // users,
       currentUser: currUser,
       figureData: figureData,
-      setData: setData,
+      itData: kitData,
+      kitTotal: kitTotal,
+      kitValue: kitValue,
+      figValue: figValue,
+      figTotal: figTotal,
+      
+      
+      
+      
+      collectionValue: collectionValue,
+      
       logged_in: req.session.logged_in,
     });
     return currUser;
@@ -56,23 +84,20 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/myFigures', withAuth, async (req, res) => {
-  // console.log(req.session.user_id);
-  // try {
-    // Find the logged in user based on the session ID
-    // const currentUser = await User.findOne({ where: { id: req.session.user_id } });
-    // const currUser = currentUser.get({ plain: true });
-    // console.log(currUser)
+ 
     const figureData = await Figure.findAll({
       where: { user_id: req.session.user_id}
     });
 
-    
+    const figValue = await Figure.sum('total_v', {
+      where: {user_id: req.session.user_id }
+    });
 
     const figures = figureData.map((figure) => figure.get({ plain: true }));
   
     res.render('myFigures', {
       figures,
-      figureSum,
+      figValue: figValue,
       logged_in: req.session.logged_in 
     });
 
@@ -89,14 +114,32 @@ router.get('/mySets', withAuth, async (req, res) => {
     // const currentUser = await User.findOne({ where: { id: req.session.user_id } });
     // const currUser = currentUser.get({ plain: true });
     // console.log(currUser)
-    const setData = await Set.findAll({
+    const setData = await Kit.findAll({
       where: { user_id: req.session.user_id}
     });
+    const kitTotal = await Kit.sum('quantity', {
+      where: {user_id: req.session.user_id }
+    });
+    
+    // // total value of sets
+    // const kitValue = await Kit.sum('value', {
+    //   where: {user_id: req.session.user_id }
+    // });
+    const kitValue = await Kit.sum('total_v', {
+      where: {user_id: req.session.user_id }
+    })
 
-    const sets = setData.map((set) => set.get({ plain: true }));
+    
+
+    const kitTotalIndiv = kitTotal ** kitValue;
+
+    const kits = setData.map((set) => set.get({ plain: true }));
   
     res.render('mySets', {
-      sets,
+      kits,
+      kitTotal: kitTotal,
+      kitTotalIndiv: kitTotalIndiv, 
+      kitValue: kitValue,
       logged_in: req.session.logged_in 
     });
 
@@ -119,6 +162,28 @@ router.get('/editFigure/:id', withAuth, async (req, res) => {
   
     res.render('editFigure', {
       figure,
+      logged_in: req.session.logged_in 
+    });
+
+    // return(currUser, userData);
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+});
+
+router.get('/editSet/:id', withAuth, async (req, res) => {
+  // console.log(req.session.user_id);
+  // try {
+    // Find the logged in user based on the session ID
+    // const currentUser = await User.findOne({ where: { id: req.session.user_id } });
+    // const currUser = currentUser.get({ plain: true });
+    // console.log(currUser)
+    const kitData = await Kit.findByPk(req.params.id);
+
+    const kit = kitData.get({ plain: true });
+  
+    res.render('editSet', {
+      kit,
       logged_in: req.session.logged_in 
     });
 
@@ -169,6 +234,10 @@ router.get('/mySets', (req, res) => {
 router.get('/addSet', (req, res) => {
   console.log('addSet');
   res.render('addSet', { logged_in: req.session.logged_in });
+});
+router.get('/editSet', (req, res) => {
+  console.log('editSet', req.session.logged_in, req.session.user_id);
+  res.render('editSet', { logged_in: req.session.logged_in });
 });
 router.get('/resources', (req, res) => {
   console.log('resources');
