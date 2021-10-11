@@ -19,7 +19,7 @@
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='set-number'>Set Number</label>
         <input
-          type='text'
+          type='number'
           class='form-control fst-italic'
           id='set-number'
           placeholder='Set number'
@@ -48,7 +48,7 @@
           type='number'
           class='set-value form-control fst-italic'
           id='set-value'
-          placeholder='$$'
+          placeholder='$'
           required
         />
         <div class='invalid-feedback'>
@@ -73,9 +73,22 @@
         </div>
       </div>
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
+        <label for='set-totalV'>What's the total value?($)</label>
+        <input
+          type='number'
+          class='fst-italic form-control'
+          id='set-totalV'
+          placeholder='total $ amount'
+          required
+        />
+        <div class='valid-feedback'>
+          Please choose an answer.
+        </div>
+      </div>
+      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='condition'>Condition</label>
-        <select id='condition' class='form-control' name='condition'>
-          <option class='condition' value='null'></option>
+        <select id='set-condition' class='form-control' name='condition'>
+          <option class='condition' value=''></option>
           <option class='condition' value='sealed'>Sealed</option>
           <option class='condition' value='new'>New</option>
           <option class='condition' value='like-new'>Like-New</option>
@@ -89,17 +102,7 @@
           Please select a condition.
         </div>
       </div>
-      <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
-        <label for='set-favorite'>Is it your favorite set?</label>
-        <select id='set-favorite' class='form-control' name='favorite'>
-          <option class='set-favorite' value=''></option>
-          <option class='set-favorite' value='yes'>Yes</option>
-          <option class='set-favorite' value='no'>No</option>
-        </select>
-        <div class='valid-feedback'>
-          Please choose an answer.
-        </div>
-      </div>
+      
       <div class='col-sm-12 col-md-6 col-lg-3 mb-3 input-box'>
         <label for='set-notes'>Notes</label>
         <input
@@ -117,7 +120,7 @@
 
     </div>
     <div class='create_Btn'>
-      <button type='click' class='btn add_setBtn'>Add Set</button>
+      <button type='click' class='banner_btn add_figBtn add_setBtn'>Add Set</button>
     </div>
   </form>
   <p class='fst-italic recommendation_text'>It is recommended that you use
