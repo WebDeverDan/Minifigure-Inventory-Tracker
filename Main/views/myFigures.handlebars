@@ -9,7 +9,7 @@
     <div class="col-sm">Condition</div>
     <div class="col-sm">Rare?</div>
     <div class="col-sm">Value</div>
-    <div class="col-sm">Favorite Fig?</div>
+    <div class="col-sm">Total Value (${{figValue}})</div>
     <div class="col-sm">Notes</div>
   </div>
 <div class="itemconfiguration">
@@ -24,7 +24,7 @@
     <div class="col-sm">{{figure.condition}}</div>
     <div class="col-sm">{{figure.rare}}</div>
     <div class="col-sm">${{figure.value}}</div>
-    <div class="col-sm">{{figure.favorite}}</div>
+    <div class="col-sm">${{multiply figure.value figure.quantity}}</div>
     <div class="col-sm">{{figure.notes}}</div>
   </div>
   <div class="figure_Btns">
@@ -42,4 +42,10 @@
 {{/if}}
 </div>
 </div>
+<button
+            class='banner_btn add_a_new_figBtn'
+            id='add_figuresBtn'
+            type='submit'
+            onclick="location.href='/addFigure'"
+          >Add Another Fig</button>
 
