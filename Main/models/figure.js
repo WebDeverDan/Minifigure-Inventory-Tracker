@@ -35,8 +35,9 @@ Figure.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    favorite: {
-      type: DataTypes.STRING,
+    total_v: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     notes: {
       type: DataTypes.STRING,
