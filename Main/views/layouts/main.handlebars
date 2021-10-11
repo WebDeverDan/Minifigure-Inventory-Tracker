@@ -9,7 +9,9 @@
       integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU'
       crossorigin='anonymous'
     />
-    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='/css/styles.css' />
+    <link rel='toast' href='./../../public/toast/toast.css'/>
+    
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
@@ -28,99 +30,102 @@
       href='https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'
       rel='stylesheet'
     />
-    <title>The Collector</title>
-  </head>
-  <body>
-    <div class="hero">
-    <header class='banner'>
-      <nav class='navbar navbar-dark bg-dark p-2'>
-        <span
-          class='navbar-brand mb-0 h1 page_welcome'
-          onclick="location.href='/'">THE COLLECTOR</span>
-        {{#if logged_in}}
-        <button class='btn log_out' id='logout' type='click'>Log Out</button>
-        {{/if}}
-      </nav>
-    </header>
-    
-    <main>
-      {{!-- <img src="/images/bgd.jpg" class="bgd_image"/> --}}
-      {{#if logged_in}}
-      <div class="main_window">
-        <div class="side_nav">
-          <button class='banner_btn dashboardBtn' id='dashboardBtn' type='click' onclick="location.href='/'">Dashboard</button>
-          <button class='banner_btn my_figuresBtn'
-            id='my_figuresBtn'
-            type='submit'
-            onclick="location.href='/myFigures'"
-          >My Figures</button>
-          <button
-            class='banner_btn add_figuresBtn'
-            id='add_figuresBtn'
-            type='submit'
-            onclick="location.href='/addFigure'"
-          >Add Figures</button>
-          <button
-            class='banner_btn my_setsBtn'
-            id='my_setsBtn'
-            type='submit'
-            onclick="location.href='/mySets'"
-          >My Sets</button>
-          <button
-            class='banner_btn add_setsBtn'
-            id='add_setsBtn'
-            type='submit'
-            onclick="location.href='/addSet'"
-          >Add Sets</button>
-          <button
-            class='banner_btn research_figuresBtn'
-            id='bricklinkBtn'
-            type='submit'
-            onclick="location.href='/resources'"
-          >Lego Resources</button>
-          </div>
-        {{/if}}
-      <div class='container-fluid'>
-        {{#if logged_in}}
-          {{!-- <h2 class='welcome_info_logged_in container-sm'>
-            Welcome back
-            {{currentUser.first_name}}!
-          </h2> --}}
-        {{else}}
-            
-        {{/if}}
-        <div class='container-fluid main-content'>
-
-          {{{body}}}
-
-        </div>
-
-      </div>
-      </div>
-    </main>
-
-    <br />
-    <br />
-    <br />
-    </div>
-  <div class="foot-wrapper">
-    <footer class='footer banner navbar-dark bg-dark p-2'>
-      <p class="footer_text">Copyright: 2021 - Daniel Bradley</p>
-    </footer>
-  </div>
-  
     <script
       src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js'
       integrity='sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/'
       crossorigin='anonymous'
-    >
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
-    </script>
+  
+
+    {{#if logged_in}}
+      <title>{{currentUser.first_name}} the Lego Collector</title>
+    {{else}}
+      <title> The Lego Collector</title>
+    {{/if}}
+  </head>
+  <body>
+    <div class='hero'>
+      <header class='banner'>
+        <nav class='navbar navbar-dark bg-dark p-2'>
+          <span
+            class='navbar-brand mb-0 h1 page_welcome'
+            onclick="location.href='/'"
+          >THE LEGO COLLECTOR</span>
+          {{#if logged_in}}
+            <button class='btn log_out' id='logout' type='click'>Log Out</button>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+          
+        {{#if logged_in}}
+          <div class='side_nav'>
+            <a
+              class='banner_btn dashboardBtn header_btn active'
+              id='dashboardBtn'
+              type='click'
+              onclick="location.href='/'"
+            >Dashboard</a>
+            <a
+              class='banner_btn header_btn my_figuresBtn'
+              id='my_figuresBtn'
+              type='submit'
+              onclick="location.href='/myFigures'"
+            >My Figures</a>
+            <a
+              class='banner_btn header_btn add_figuresBtn'
+              id='add_figuresBtn'
+              type='submit'
+              onclick="location.href='/addFigure'"
+            >Add Figures</a>
+            <a
+              class='banner_btn header_btn my_setsBtn'
+              id='my_setsBtn'
+              type='submit'
+              onclick="location.href='/mySets'"
+            >My Sets</a>
+            <a
+              class='banner_btn header_btn add_setsBtn'
+              id='add_setsBtn'
+              type='submit'
+              onclick="location.href='/addSet'"
+            >Add Sets</a>
+            <a
+              class='banner_btn header_btn research_figuresBtn'
+              id='bricklinkBtn'
+              type='submit'
+              onclick="location.href='/resources'"
+            >Lego Resources</a>
+          </div>
+        {{/if}}
+        <div class='container-fluid'>
+          {{#if logged_in}}
+          {{else}}
+          {{/if}}
+          <div class='container-fluid main-content'>
+
+            {{{body}}}
+
+          </div>
+        </div>
+       
+      </main>
+    </div>
+    <div class='foot-wrapper'>
+      <footer class='footer banner navbar-dark bg-dark p-2'>
+        <p class='footer_text'>Copyright: 2021 - Daniel Bradley</p>
+      </footer>
+    </div>
 
     {{#if logged_in}}
       <script src='/js/logout.js'></script>
+      <script src='/js/homepage.js'></script>
+      
     {{/if}}
     
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 
 </html>
