@@ -36,10 +36,12 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/login');
-    } else {
-      alert(response.statusText);
-    }
+     
+      swal({title: "Welcome!", text: "Click OK to proceed", icon: "success"})
+      .then((value) =>
+      parent.window.location="/login"
+    );
+    } 
   }
 };
 
