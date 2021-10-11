@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Figure, Set  } = require('../models');
+const { User, Figure, Kit  } = require('../models');
 
 const userData = require('./userData.json');
 const figureData = require('./figureData.json');
+const kitData = require('./kitData.json');
 
 
 const seedAll = async () => {
@@ -22,6 +23,14 @@ const seedAll = async () => {
     individualHooks: true,
     returning: true,
   });
+
+  await Kit.bulkCreate
+  (kitData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+
 
   process.exit(0);
 };
