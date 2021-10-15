@@ -105,6 +105,10 @@ body::after {
   transition: 0.3s;
 }
 
+.dashboardBtn:active{
+  background:#212529;
+}
+
 .my_figuresBtn {
   background: gray;
   color: #fff;
@@ -118,6 +122,9 @@ body::after {
   border-bottom-left-radius: 5px;
   border-top: none;
   transition: 0.3s;
+}
+.my_figuresBtn:active{
+  background:#212529;
 }
 
 .header_Btn {
@@ -222,18 +229,25 @@ body::after {
 .page_welcome {
   font-size: x-large;
 }
-
+.login_content_box{
+  height: 100%;
+}
 .login_paragraph {
   margin-top: 2em;
   padding-top: 1em;
   width: 50%;
-  height: 45%;
-  font-family: 'Bungee', cursive;
+  /* height: 45%; */
   background: #fff;
   border-radius: 15px;
   border: solid;
 }
 
+.login_text{
+  margin-top: 1em;
+  font-family: 'Bungee', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
 .brick_photo {
   margin: auto;
 }
@@ -414,6 +428,19 @@ body::after {
   border: solid;
   width: 7%;
 }
+/* .pen_box{
+  display: flex;
+  justify-content: flex-end;
+} */
+.pen{
+  padding-top: .5em;
+  width: 20px;
+  justify-content: right;
+}
+
+.pen:hover{
+  cursor:pointer;
+}
 
 .add_a_new_figBtn {
   background-color: lightgray;
@@ -534,9 +561,11 @@ body::after {
 }
 
 .recommendation_text {
+  font-family: arial;
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 1em;
+  font-size: larger;
 }
 
 .newset_container {
