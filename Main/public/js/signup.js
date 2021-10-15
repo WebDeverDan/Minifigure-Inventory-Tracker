@@ -39,7 +39,7 @@ const signupFormHandler = async (event) => {
      
       swal({title: "Welcome!", text: "Click OK to proceed", icon: "success"})
       .then((value) =>
-      parent.window.location="/login"
+      parent.window.location="/"
     );
     } 
   }
