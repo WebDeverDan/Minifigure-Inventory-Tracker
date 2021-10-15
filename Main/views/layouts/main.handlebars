@@ -63,40 +63,34 @@
         {{#if logged_in}}
           <div class='side_nav'>
             <a
-              class='banner_btn dashboardBtn header_btn active'
-              id='dashboardBtn'
-              type='click'
-              onclick="location.href='/'"
+              class='banner_btn dashboardBtn header_btn'
+              id='dashboardB'
+              href="/"
             >Dashboard</a>
             <a
               class='banner_btn header_btn my_figuresBtn'
-              id='my_figuresBtn'
-              type='submit'
-              onclick="location.href='/myFigures'"
+              id='my_figuresB'
+              href='/myFigures'
             >My Figures</a>
             <a
               class='banner_btn header_btn add_figuresBtn'
-              id='add_figuresBtn'
-              type='submit'
-              onclick="location.href='/addFigure'"
+              id='add_figuresB'
+              href='/addFigure'
             >Add Figures</a>
             <a
               class='banner_btn header_btn my_setsBtn'
-              id='my_setsBtn'
-              type='submit'
-              onclick="location.href='/mySets'"
+              id='my_setsB'
+              href='/mySets'
             >My Sets</a>
             <a
               class='banner_btn header_btn add_setsBtn'
-              id='add_setsBtn'
-              type='submit'
-              onclick="location.href='/addSet'"
+              id='add_setsB'
+              href='/addSet'
             >Add Sets</a>
             <a
               class='banner_btn header_btn research_figuresBtn'
-              id='bricklinkBtn'
-              type='submit'
-              onclick="location.href='/resources'"
+              id='bricklinkB'
+              href='/resources'
             >Lego Resources</a>
           </div>
         {{/if}}
@@ -121,7 +115,7 @@
 
     {{#if logged_in}}
       <script src='/js/logout.js'></script>
-      <script src='/js/homepage.js'></script>
+      
       
     {{/if}}
     
