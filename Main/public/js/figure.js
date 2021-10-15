@@ -1,4 +1,5 @@
-
+const addFigsBtn = document.querySelector('.add_figuresBtn');
+addFigsBtn.setAttribute("style", "background-color:#212529");
 
 const newFigureHandler = async (event) => {
     event.preventDefault();
@@ -30,42 +31,7 @@ const newFigureHandler = async (event) => {
       } 
     }
   };
-  
-
-
-
-
-
-
-
-
-
-
-// const deleteB = document.querySelector("#delete_button");
-// console.log(deleteB)
-
-// const deletebutton = async (event) => {
-//   const userID =  event.target.getAttribute("data-id")
-//   console.log(userID);
-//   const response = await fetch(`/delete/${userID}`, {
-//     method: 'DELETE',
-//     headers: { 'Content-Type': 'application/json' },
-//   });
-
-//   if (response.ok) {
-//     document.location.replace('/login');
-//     alert("You have deleted your account. See you soon!");
-//   } else {
-//     alert(response.statusText);
-//   }
-// };
-
-// deleteB.addEventListener('click', deletebutton);
-
-
-
-
-  
+    
   document
     .querySelector('.add_figBtn')
     .addEventListener('click', newFigureHandler);
@@ -74,7 +40,5 @@ const newFigureHandler = async (event) => {
  
 
 
-  // document
-  //   .querySelector('.project-list')
-  //   .addEventListener('click', delButtonHandler);
-  
+
+
