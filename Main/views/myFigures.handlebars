@@ -11,6 +11,7 @@
     <div class="col-sm">Value</div>
     <div class="col-sm">Total Value (${{figValue}})</div>
     <div class="col-sm">Notes</div>
+    <div class="col-sm">Edit Figure</div>
   </div>
 <div class="itemconfiguration">
 {{#if figures.length}}
@@ -26,16 +27,22 @@
     <div class="col-sm">${{figure.value}}</div>
     <div class="col-sm">${{multiply figure.value figure.quantity}}</div>
     <div class="col-sm">{{figure.notes}}</div>
+    <div class=" col-sm pen_box">
+    <img class="pen" type='click'
+            data-id="{{figure.id}}"
+            onclick="location.href='/editFigure/{{figure.id}}'" src="/images/pen.png"/>
+     </div> 
   </div>
-  <div class="figure_Btns">
-    <button
+  
+    {{!-- <button
             class='banner_btn edit_figuresBtn'
             id='edit_figuresBtn'
             type='click'
             data-id="{{figure.id}}"
             onclick="location.href='/editFigure/{{figure.id}}'"
-          >Edit</button>
-  </div>
+          >Edit</button> --}}
+    
+  
 </div>
 </div>
 {{/each}}
@@ -49,3 +56,4 @@
             onclick="location.href='/addFigure'"
           >Add Another Fig</button>
 
+<script src='/js/myFigures.js'></script>
