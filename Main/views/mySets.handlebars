@@ -10,6 +10,7 @@
     <div class="col-sm">Value</div>
     <div class="col-sm">Total Value ($ {{kitValue}})</div>
     <div class="col-sm">Notes</div>
+    <div class="col-sm">Edit Set</div>
   </div>
 <div class="itemconfiguration">
 {{#if kits.length}}
@@ -24,16 +25,13 @@
     <div class="col-sm">${{kit.value}}</div>
     <div class="col-sm">${{multiply kit.value kit.quantity}}</div>
     <div class="col-sm">{{kit.notes}}</div>
-  </div>
-  <div class="figure_Btns">
-    <button
-            class='banner_btn edit_figuresBtn'
-            id='edit_setBtn'
-            type='submit'
+    <div class=" col-sm pen_box">
+    <img class="pen" type='submit'
             data-id="{{kit.id}}"
-            onclick="location.href='/editSet/{{kit.id}}'"
-          >Edit</button>
+            onclick="location.href='/editSet/{{kit.id}}'" src="/images/pen.png"/>
+     </div> 
   </div>
+  
 </div>
 </div>
 {{/each}}
@@ -48,3 +46,5 @@
           >Add Another Set</button>
 
 {{!-- <script src="/js/editSet.js"></script> --}}
+
+<script src='/js/mySets.js'></script>
