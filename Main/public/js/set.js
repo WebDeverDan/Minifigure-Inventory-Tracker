@@ -1,3 +1,6 @@
+const addSetBtn = document.querySelector('.add_setsBtn');
+addSetBtn.setAttribute("style", "background-color:#212529");
+
 const newSetHandler = async (event) => {
   event.preventDefault();
    
