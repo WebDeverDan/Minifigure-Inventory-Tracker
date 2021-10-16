@@ -1,4 +1,4 @@
-<h2 class='login_welcome'>{{currentUser.first_name}}'s Collector Dashboard</h2>
+<h2 class='login_welcome'>Your Collector Dashboard</h2>
 <div class='profile-page'>
 <div class='card profile_info' style='width: 50%;'>
   {{! <img/> }}
@@ -20,13 +20,35 @@
   <div class='card profile_info' style='width: 50%;'>
   <div>
   <ul class='list-group profile_list profile_text_list list-group-flush'>
+    {{#if figTotal}}
     <li class='list-group-item profile_text fs-5'>Figures in your collection: <span class="profile_spec_text">
       {{figTotal}}</span></li>
+      {{else}}
+    <li class='list-group-item profile_text fs-5'>Figures in your collection: <span class="profile_spec_text">
+      0</span></li>  
+    {{/if}}
+    {{#if kitTotal}}
     <li class='list-group-item profile_text fs-5'>Sets in your collection: <span class="profile_spec_text">
       {{kitTotal}}</span></li>
+    {{else}}
+    <li class='list-group-item profile_text fs-5'>Sets in your collection: <span class="profile_spec_text">
+      0</span></li>
+    {{/if}}
+    {{#if figValue}}
     <li class='list-group-item profile_text fs-5' >Your figures are worth:<span class="profile_spec_text"> ${{figValue}}.00</span></li>
+    {{else}}
+     <li class='list-group-item profile_text fs-5' >Your figures are worth:<span class="profile_spec_text"> $0</span></li>
+     {{/if}}
+     {{#if kitValue}}
     <li class='list-group-item profile_text fs-5'>Your sets are worth: <span class="profile_spec_text"> ${{kitValue}}.00</span></li>
+    {{else}}
+    <li class='list-group-item profile_text fs-5'>Your sets are worth: <span class="profile_spec_text"> $0</span></li>
+    {{/if}}
+    {{#if collectionValue}}
     <li class='list-group-item profile_text fs-5'>Your collection is worth: <span class="profile_spec_text"> ${{collectionValue}}.00</span></li>
+    {{else}}
+    <li class='list-group-item profile_text fs-5'>Your collection is worth: <span class="profile_spec_text"> $0</span></li>
+    {{/if}}
   </ul>
   </div>
   </div>
