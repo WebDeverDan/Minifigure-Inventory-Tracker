@@ -53,8 +53,23 @@
             class='navbar-brand mb-0 h1 page_welcome'
             onclick="location.href='/'"
           >THE LEGO COLLECTOR</span>
+
+          
           {{#if logged_in}}
             <button class='btn log_out' id='logout' type='click'>Log Out</button>
+            {{else}}
+            <div class="login-signup">
+            <div class="form-outline p-1">
+              <input type="email" id="email-login" class="form-control form-control-md" placeholder='Email'/>
+            </div>
+            <div class="form-outline p-1">
+              <input type="password" id="password-login" class="form-control form-control-md form-input" placeholder='Password' />
+            </div>
+             <button class="btn btn-primary btn-sm btn-block login_Btn p-1 m-1" id="password-login" type="click" id='login_Btn'>Sign In</button>
+            <button class="btn btn-primary btn-sm signup btn-block p-1 m-1" id="password-login" type='submit' onclick="location.href='/signup'">Signup</button>
+          </div>
+          </div>
+          </div>
           {{/if}}
         </nav>
       </header>
@@ -94,16 +109,16 @@
             >Lego Resources</a>
           </div>
         {{/if}}
-        <div class='container-fluid'>
+        {{!-- <div class='container-fluid'> --}}
           {{#if logged_in}}
           {{else}}
           {{/if}}
-          <div class='container-fluid main-content'>
+          {{!-- <div class='container main-content'> --}}
 
             {{{body}}}
 
-          </div>
-        </div>
+          {{!-- </div> --}}
+        {{!-- </div> --}}
        
       </main>
     </div>

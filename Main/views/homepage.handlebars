@@ -1,9 +1,12 @@
-<h2 class='login_welcome'>Your Collector Dashboard</h2>
-<div class='profile-page'>
-<div class='card profile_info' style='width: 50%;'>
-  {{! <img/> }}
-  <div>
-    <ul class='list-group profile_list profile_text_list list-group-flush'>
+<div class='row justify-content-center'>
+<h2 class='login_welcome text-center'>Your Collector Dashboard</h2>
+</div>
+<div class='container'> 
+
+<div class='row justify-content-center'>
+  
+<div class='card profile_info col-5'>
+    <ul class='list-group profile_text_list list-group-flush'>
       <li class='list-group-item profile_text fs-5'>Name: <span class="profile_spec_text">
         {{currentUser.first_name}}</span></li>
       <li class='list-group-item profile_text fs-5'>Email: <span class="profile_spec_text">
@@ -15,11 +18,11 @@
       <li class='list-group-item profile_text fs-5'>Favorite Figure: <span class="profile_spec_text" >
         {{currentUser.favorite_fig}}</span></li>
     </ul>
-  </div>
 </div>
-  <div class='card profile_info' style='width: 50%;'>
-  <div>
-  <ul class='list-group profile_list profile_text_list list-group-flush'>
+
+
+  <div class='card profile_info col-5'>
+  <ul class='list-group profile_text_list list-group-flush'>
     {{#if figTotal}}
     <li class='list-group-item profile_text fs-5'>Figures in your collection: <span class="profile_spec_text">
       {{figTotal}}</span></li>
@@ -50,6 +53,7 @@
     <li class='list-group-item profile_text fs-5'>Your collection is worth: <span class="profile_spec_text"> $0</span></li>
     {{/if}}
   </ul>
+  </div>
   </div>
   </div>
 </div>

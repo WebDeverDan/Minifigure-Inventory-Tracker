@@ -27,8 +27,23 @@ body::after {
   left: 0;
   bottom: 0;
   right: 0;
+  position:fixed;
+  z-index: -1;
+}
+
+#root {
+  content: '';
+  background: url('/images/bgd.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.75;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   position: absolute;
   z-index: -1;
+  height: auto;
 }
 
 .swal-text {
@@ -69,9 +84,10 @@ body::after {
 }
 
 .login_welcome {
-  display: flex;
+  /* display: flex;
+  flex-direction: row;
   justify-content: center;
-  text-align: center;
+  text-align: center; */
   border: solid;
   border-radius: 8px;
   width: 60%;
@@ -230,13 +246,15 @@ body::after {
   font-size: x-large;
 }
 .login_content_box{
-  height: 100%;
+  width: 100%;
+  margin-bottom: 2em;
+
 }
 .login_paragraph {
   margin-top: 2em;
+  margin-bottom: 4em;
   padding-top: 1em;
-  width: 50%;
-  /* height: 45%; */
+  width: 100%;
   background: #fff;
   border-radius: 15px;
   border: solid;
@@ -286,16 +304,19 @@ body::after {
   background-color: #fff;
 }
 
+.login_content_box{
+  display: flex;
+  column;
+  width: 100%;
+}
 .login-signup {
-  width: 30%;
-  height: 100%;
-  margin-top: 1em;
-  font-family: 'Bungee', cursive;
-  padding-top: 1em;
+display: flex;
+flex-direction: row;
+padding: .5em;
 }
 
 .login-card {
-  border: solid;
+  /* border: solid; */
 }
 
 .login_Btn {
@@ -312,6 +333,7 @@ body::after {
   border: solid;
   border-radius: 8px;
   background-color: white;
+  width: 100%;
 }
 
 .form-row {
@@ -524,14 +546,17 @@ body::after {
   border: solid;
   border-radius: 8px;
   margin: 0.5em;
-  
+}
+
+.profile-box{
+  display: flex;
+  flex-direction: row;
 }
 
 .profile-page {
-  display: flex;
-  flex-direction: row;
   padding: 1em;
   width: 120%;
+  margin-bottom: 4em;
 }
 
 .profile_spec_text {
@@ -542,8 +567,12 @@ body::after {
   border-radius: 8px;
 }
 
+.profile_text_list{
+
+}
+
 .profile_text {
-  font-size: 15px;
+  /* font-size: 15px; */
 }
 
 .newFigHeader {

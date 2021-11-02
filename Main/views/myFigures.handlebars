@@ -1,6 +1,7 @@
+<div class='row justify-content-center'>
 <h2 class="yourfiguresHeader">Your Minifigure Collection</h2>
-
-<div class='col-sm4 col-md-6 col-lg-12 mb-3 figures_container'>
+</div>
+<div class='col-sm4 col-md-6 col-lg-12 mb-3 m-2 figures_container'>
   
 <div class="row grid_header">
     <div class="col-sm">Name</div>
@@ -9,7 +10,11 @@
     <div class="col-sm">Condition</div>
     <div class="col-sm">Rare?</div>
     <div class="col-sm">Value</div>
+    {{#if figValue}}
     <div class="col-sm">Total Value (${{figValue}})</div>
+    {{else}}
+    <div class="col-sm">Total Value ($0)</div>
+    {{/if}}
     <div class="col-sm">Notes</div>
     <div class="col-sm">Edit Figure</div>
   </div>
