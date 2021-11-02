@@ -17,6 +17,10 @@ a:active {
   background-color: #212529;
 }
 
+body{
+  overflow-x:hidden;
+}
+
 body::after {
   content: '';
   background: url('/images/bgd.jpg');
