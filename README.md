@@ -46,11 +46,11 @@
   * If you have any questions regarding the application, please reach out to **Daniel Bradley** (the creator), at their GitHub profile located here: **https://github.com/WebDeverDan**, or via email at **danielbvideo@gmail.com**.
 
   ## Screenshots
-  ![Image 1 of application:]()
-  ![Image 2 of application:]()
-  ![Image 3 of application:]()
-  
-
+  ![Image 1 of application:](https://github.com/WebDeverDan/Minifigure-Inventory-Tracker/blob/e38f327ea2d28e83645b9429ff8d49b46120f068/Main/public/images/screenshots/welcome.png)
+  ![Image 2 of application:](https://github.com/WebDeverDan/Minifigure-Inventory-Tracker/blob/e38f327ea2d28e83645b9429ff8d49b46120f068/Main/public/images/screenshots/homepage.png)
+  ![Image 3 of application:](https://github.com/WebDeverDan/Minifigure-Inventory-Tracker/blob/e38f327ea2d28e83645b9429ff8d49b46120f068/Main/public/images/screenshots/addFig.png)
+  ![Image 4 of application:](https://github.com/WebDeverDan/Minifigure-Inventory-Tracker/blob/e38f327ea2d28e83645b9429ff8d49b46120f068/Main/public/images/screenshots/addSet.png)
+  ![Image 5 of application:](https://github.com/WebDeverDan/Minifigure-Inventory-Tracker/blob/e38f327ea2d28e83645b9429ff8d49b46120f068/Main/public/images/screenshots/resources.png)
 
 
 
